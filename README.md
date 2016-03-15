@@ -93,3 +93,9 @@ CREATE TABLE user_follows (
 インサート文tweets
 insert into tweets (tweet_id,user_id,user_name,content) values(null,1,'user_name','test');
 
+SELECT tweets.tweet_id,tweets.user_id,tweets.content,tweets.created_at,
+        users.user_name,
+        retweets.tweet_id,retweets.user_id FROM tweets
+LEFT JOIN users ON tweets.user_id = users.user_id
+LEFT JOIN retweets ON retweets.tweet_id = tweets.tweet_id
+ORDER BY tweets.created_at DESC;

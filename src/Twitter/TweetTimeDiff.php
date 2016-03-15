@@ -1,11 +1,10 @@
 <?
-
 namespace Twitter;
 
-class TweetTimeDiff
+class TweetTimeDiff extends Tweet
 {
 
-    public function tweet_time_chenge($tweet_rows)
+    public function tweetTimeChenge($tweet_rows)
     {
         foreach ($tweet_rows as $row) {
             $row['created_at'] = $this->tweet_time_diff($row['created_at']);

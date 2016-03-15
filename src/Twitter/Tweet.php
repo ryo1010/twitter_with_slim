@@ -2,8 +2,15 @@
 
 namespace Twitter;
 
-class TweetFunction extends DatabaseConnect
+class Tweet extends DatabaseConnect
 {
+
+    private $tweet_id;
+    private $user_id;
+    private $user_name;
+    private $content;
+    private $INSERTED = 0;
+
     public function __construct(){
         $this->login_auth();
     }
@@ -18,16 +25,41 @@ class TweetFunction extends DatabaseConnect
         }
     }
 
-    public function tweet_display(){
+
+    public function setTweetId($tweet_id)
+    {
+        $this->tweet_id = $tweet_id;
+        return $this;
+    }
+
+    public function setUserId($user_id)
+    {
+        $this->user_id = $user_id;
+        return $this;
+    }
+
+    public function setUserName($user_name)
+    {
+        $this->user_name = $user_name;
+        return $this;
+    }
+
+    public function setContent($content)
+    {
+        $this->content = $content;
+        return $this;
+    }
+
+
+    public function tweetDisplay(){
         try {
             $link = $this->db_connect();
-            $INSERTED = 0;
             $stmt = $link->query(
                 "SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,
                 tweets.content,tweets.created_at,users.user_name
                 FROM tweets left join users
                 ON tweets.user_id = users.user_id
-                WHERE tweets.stutas = 0
+                WHERE tweets.stutas = $this->INSERTED
                 ORDER BY tweets.created_at DESC"
             );
             $stmt->execute();
@@ -42,7 +74,7 @@ class TweetFunction extends DatabaseConnect
         }
     }
 
-    public function tweet_submit($user_id,$content)
+    public function tweetInsert()
     {
         try {
             $link = $this->db_connect();
@@ -50,7 +82,12 @@ class TweetFunction extends DatabaseConnect
                 "INSERT INTO tweets(user_id,content,created_at)
                  VALUES(?,?,now())"
             );
-            $stmt->execute(array($user_id,$content));
+            $stmt->execute(
+                array(
+                    $this->user_id,
+                    $this->content
+                )
+            );
             return true;
 
         } catch (PDOException $e) {
@@ -61,7 +98,7 @@ class TweetFunction extends DatabaseConnect
         }
     }
 
-    public function tweet_edit($tweet_id,$user_id){
+    public function tweetEditSelect(){
         try {
             $link = $this->db_connect();
             $stmt = $link->prepare(
@@ -73,7 +110,12 @@ class TweetFunction extends DatabaseConnect
                 WHERE tweets.tweet_id = ? AND tweets.user_id = ?
                 ORDER BY tweets.created_at DESC"
             );
-            $stmt->execute(array($tweet_id,$user_id));
+            $stmt->execute(
+                array(
+                    $this->tweet_id,
+                    $this->user_id
+                )
+            );
             $tweet_rows = $stmt->fetch(\PDO::FETCH_ASSOC);
 
             return $tweet_rows;
@@ -85,14 +127,14 @@ class TweetFunction extends DatabaseConnect
         }
     }
 
-    public function tweet_edit_submit($tweet_id,$user_id,$content){
+    public function tweetEditSubmit(){
         try {
             $link = $this->db_connect();
             $stmt = $link->prepare(
                 "UPDATE tweets SET content = ?
                  WHERE tweet_id = ? AND user_id = ?"
             );
-            $stmt->execute(array($content,$tweet_id,$user_id));
+            $stmt->execute(array($this->content,$this->tweet_id,$this->user_id));
             return true;
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -102,7 +144,7 @@ class TweetFunction extends DatabaseConnect
         }
     }
 
-    public function tweet_delete($tweet_id,$user_id)
+    public function tweetDelete()
     {
         try {
             $link = $this->db_connect();
@@ -111,7 +153,13 @@ class TweetFunction extends DatabaseConnect
                 "UPDATE tweets SET stutas = ?
                 WHERE tweet_id = ? AND user_id = ?"
             )) {
-            $stmt->execute(array($STATUS,$tweet_id,$user_id));
+                $stmt->execute(
+                array(
+                    $STATUS,
+                    $this->tweet_id,
+                    $this->user_id
+                    )
+                );
             }
             return true;
         } catch (Exception $e) {
@@ -122,4 +170,27 @@ class TweetFunction extends DatabaseConnect
         }
     }
 
+    public function tweetHistory()
+    {
+    $link = $this->db_connect();
+    $TWEET_HISTORY = 1;
+    if ($stmt = $link->prepare(
+        "SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,
+        tweets.content,tweets.created_at,users.user_name
+        FROM tweets left join users
+        ON tweets.user_id = users.user_id
+        WHERE tweets.user_id = ? AND
+        tweets.stutas = $TWEET_HISTORY ORDER BY tweets.created_at DESC"
+    )) {
+        $stmt->execute(
+            array(
+                $this->user_id
+            )
+        );
+        $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    $stmt=null;
+    $link=null;
+    return $tweet_rows;
+    }
 }

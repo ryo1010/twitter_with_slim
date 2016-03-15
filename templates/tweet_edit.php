@@ -5,7 +5,7 @@
     <title>ツイート編集</title>
 </head>
 <body>
-<form action="/tweet_edit" method="POST">
+<form action="/tweet/edit" method="POST">
     <table border='0'>
     <tr>
         <td>
@@ -29,7 +29,7 @@
     </table>
     <input type="submit" name="tweet_edit" value="編集">
 </form>
-<form action="/tweet_delete" method="POST">
+<form action="/tweet/delete" method="POST">
     <input type="hidden" name="tweet_id" value="<?= $rows['tweet_id']?>">
     <input type="submit" name="tweet_delete" value="削除"></input>
 </form>

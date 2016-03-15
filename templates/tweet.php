@@ -5,7 +5,7 @@
     <title>つぶやく</title>
 </head>
 <body>
-<form action="/tweet_submit" method="POST">
+<form action="/tweet/submit" method="POST">
     <table>
     <tr>
         <td>
