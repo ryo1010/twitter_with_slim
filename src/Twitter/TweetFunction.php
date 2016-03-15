@@ -10,7 +10,9 @@ class TweetFunction extends DatabaseConnect
 
     public function login_auth()
     {
-        if (!isset($_SESSION['user_name']) && !isset($_SESSION['user_id'])) {
+        if (!isset($_SESSION['user_name'])
+            && !isset($_SESSION['user_id'])) {
+
             header('Location: /login');
             exit();
         }
@@ -20,7 +22,14 @@ class TweetFunction extends DatabaseConnect
         try {
             $link = $this->db_connect();
             $INSERTED = 0;
-            $stmt = $link->query("SELECT tweets.tweet_id,tweets.user_id,tweets.content,tweets.created_at,users.user_name FROM tweets left join users  ON tweets.user_id = users.user_id ORDER BY tweets.created_at DESC");
+            $stmt = $link->query(
+                "SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,
+                tweets.content,tweets.created_at,users.user_name
+                FROM tweets left join users
+                ON tweets.user_id = users.user_id
+                WHERE tweets.stutas = 0
+                ORDER BY tweets.created_at DESC"
+            );
             $stmt->execute();
             $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
@@ -78,7 +87,6 @@ class TweetFunction extends DatabaseConnect
 
     public function tweet_edit_submit($tweet_id,$user_id,$content){
         try {
-            echo $tweet_id."/".$user_id."/".$content;
             $link = $this->db_connect();
             $stmt = $link->prepare(
                 "UPDATE tweets SET content = ?
@@ -87,8 +95,30 @@ class TweetFunction extends DatabaseConnect
             $stmt->execute(array($content,$tweet_id,$user_id));
             return true;
         } catch (PDOException $e) {
+            echo $e->getMessage();
+        } finally {
+            $link = null;
+            $stmt = null;
+        }
+    }
+
+    public function tweet_delete($tweet_id,$user_id)
+    {
+        try {
+            $link = $this->db_connect();
+            $STATUS = 1;
+            if ( $stmt = $link->prepare(
+                "UPDATE tweets SET stutas = ?
+                WHERE tweet_id = ? AND user_id = ?"
+            )) {
+            $stmt->execute(array($STATUS,$tweet_id,$user_id));
+            }
+            return true;
+        } catch (Exception $e) {
 
         } finally {
+            $link = null;
+            $stmt = null;
         }
     }
 

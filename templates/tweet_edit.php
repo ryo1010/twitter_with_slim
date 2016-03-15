@@ -28,6 +28,9 @@
     </tr>
     </table>
     <input type="submit" name="tweet_edit" value="編集">
+</form>
+<form action="/tweet_delete" method="POST">
+    <input type="hidden" name="tweet_id" value="<?= $rows['tweet_id']?>">
     <input type="submit" name="tweet_delete" value="削除"></input>
 </form>
 </body>

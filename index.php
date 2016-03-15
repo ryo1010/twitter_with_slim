@@ -2,7 +2,6 @@
 session_start();
 require 'vendor/autoload.php';
 require 'vendor/slim/slim/Slim/Slim.php';
-require 'src/Twitter/DatabaseInfo.php';
 
 $app = new \Slim\Slim;
 
@@ -41,23 +40,36 @@ $app->get('/tweet_edit/:number', function ($number) use ($app) {
 });
 
 $app->post('/tweet_edit',function () use ($app){
-    $tweet_edit_submit = new \Twitter\TweetFunction();
+    $edit_submit = new \Twitter\TweetFunction();
     $content = $app->request->post('tweet_content');
     $tweet_id = $app->request->post('tweet_id');
-    $tweet_edit_submit->tweet_edit_submit($tweet_id,$_SESSION['user_id'],$content);
-    if ($tweet_edit_submit == true) {
+    $edit_submit->tweet_edit_submit($tweet_id,$_SESSION['user_id'],$content);
+    if ($edit_submit == true) {
         header('Location: /');
     }else{
         echo "エラー";
     }
 });
 
-$app->get('/:path', function ($path) use ($app) {
-    try{
-        $app->render($path.'.php');
-    }catch (Exception $e){
+$app->post('/tweet_delete', function () use ($app) {
+    $delete = new \Twitter\TweetFunction();
+    $tweet_id = $app->request->post('tweet_id');
+    $delete_flag = $delete-> tweet_delete($tweet_id,$_SESSION['user_id']);
+    if ($delete_flag == true) {
         header('Location: /');
+    }else{
+        echo "エラー";
     }
+});
+
+$app->get('/tweet_history', function () use ($app) {
+    $history = new \Twitter\TweetHistory();
+    $history_rows = $history-> tweet_history($_SESSION['user_id']);
+    $app->render('tweet_history.php', array('rows' => $history_rows));
+});
+
+$app->get('/tweet', function () use ($app) {
+    $app->render('tweet.php');
 });
 
 $app->run();
