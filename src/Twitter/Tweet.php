@@ -163,7 +163,7 @@ class Tweet extends DatabaseConnect
             }
             return true;
         } catch (Exception $e) {
-
+            return false;
         } finally {
             $link = null;
             $stmt = null;
@@ -172,25 +172,49 @@ class Tweet extends DatabaseConnect
 
     public function tweetHistory()
     {
-    $link = $this->db_connect();
-    $TWEET_HISTORY = 1;
-    if ($stmt = $link->prepare(
-        "SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,
-        tweets.content,tweets.created_at,users.user_name
-        FROM tweets left join users
-        ON tweets.user_id = users.user_id
-        WHERE tweets.user_id = ? AND
-        tweets.stutas = $TWEET_HISTORY ORDER BY tweets.created_at DESC"
-    )) {
-        $stmt->execute(
-            array(
-                $this->user_id
-            )
-        );
-        $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $link = $this->db_connect();
+        $TWEET_HISTORY = 1;
+        if ($stmt = $link->prepare(
+            "SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,
+            tweets.content,tweets.created_at,users.user_name
+            FROM tweets left join users
+            ON tweets.user_id = users.user_id
+            WHERE tweets.user_id = ? AND
+            tweets.stutas = $TWEET_HISTORY ORDER BY tweets.created_at DESC"
+        )) {
+            $stmt->execute(
+                array(
+                    $this->user_id
+                )
+            );
+            $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        }
+        $stmt=null;
+        $link=null;
+        return $tweet_rows;
     }
-    $stmt=null;
-    $link=null;
-    return $tweet_rows;
+
+    public function tweetFavorite()
+    {
+        try {
+            $link = $this->db_connect();
+            if ( $stmt = $link->prepare(
+                "INSERT INTO favorites (user_id,tweet_id,created_at)
+                VALUES(?,?,now())"
+            )) {
+                $stmt->execute(
+                array(
+                    $this->user_id,
+                    $this->tweet_id
+                    )
+                );
+            }
+            return true;
+        } catch (Exception $e) {
+            return false;
+        } finally {
+            $link = null;
+            $stmt = null;
+        }
     }
 }

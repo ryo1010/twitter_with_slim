@@ -123,4 +123,16 @@ $app->post('/user/create/info' , function () use ($app) {
         ->userCreate();
 });
 
+$app->get('/favorite/:number' , function ($number) use ($app) {
+    $tweet_favorite = new \Twitter\Tweet();
+    $tweet_favorite
+        ->setUserId($_SESSION['user_id'])
+        ->setTweetId($number);
+    if ($tweet_favorite->tweetFavorite() == true) {
+        $app->redirect('/');
+    }else{
+        $app->render('/error',['error_info' => 'お気に入りできませんでした・']);
+    }
+});
+
 $app->run();
