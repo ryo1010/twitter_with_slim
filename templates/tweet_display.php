@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>ツイート</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
     <div class='username_div'>ユーザ名<?= $_SESSION['user_name'] ?></div>
     <a href="/tweet">つぶやく</a>
     <a href="/tweet/history">削除履歴</a>
@@ -21,7 +14,7 @@
                 <?= $row['created_at'] ?>
             </div>
             <div class='usr_id_div'>
-                <a href="/user/<?= $row['user_name'] ?>"><?= $row['user_name'] ?></a>
+                <a href="/user/<?= $row['user_id'] ?>"><?= $row['user_name'] ?></a>
             </div>
             <div class='content_div'>
                 <?= $row['content'] ?>
@@ -31,6 +24,10 @@
                 <a href='favorite/<?= $row['tweet_id'] ?>'>お気に入り</a>
                 <a href='retweet/<?= $row['tweet_id'] ?>'>リツイート</a>
             </div>
+
+                <input type="hidden" value="<?= $row['tweet_id'] ?>" name="tweet_id_hide">
+                <input type="submit" value="TEST">
+            </form>
         <? } ?>
     </div>
 </body>

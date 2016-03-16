@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>お気に入り履歴</title>
-</head>
-<body>
 <a href="/">もどる</a>
 
 <div class="main">

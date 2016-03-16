@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>つぶやく</title>
-</head>
-<body>
 <form action="/tweet/submit" method="POST">
     <table>
     <tr>

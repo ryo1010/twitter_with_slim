@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>ログイン画面</title>
-</head>
-<body>
 <form action="/login" method="POST">
     <table>
         <tr>

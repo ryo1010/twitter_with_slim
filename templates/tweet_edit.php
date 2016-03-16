@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>ツイート編集</title>
-</head>
-<body>
 <form action="/tweet/edit" method="POST">
     <table border='0'>
     <tr>

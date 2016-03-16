@@ -63,9 +63,12 @@ class Tweet extends DatabaseConnect
                 ORDER BY tweets.created_at DESC"
             );
             $stmt->execute();
-            $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-            return $tweet_rows;
+            if ($stmt->rowCount() > 1) {
+                $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+               return $tweet_rows;
+            }  else {
+                return "not_found";
+            }
         } catch (PDOException $e) {
             echo $e->Message();
         } finally {
@@ -302,7 +305,7 @@ class Tweet extends DatabaseConnect
         }
     }
 
-public function tweetRetweetDelete()
+    public function tweetRetweetDelete()
     {
         try {
             $link = $this->db_connect();
@@ -325,4 +328,29 @@ public function tweetRetweetDelete()
             $stmt = null;
         }
     }
+
+    public function tweetFavoriteDelete()
+    {
+        try {
+            $link = $this->db_connect();
+            if ( $stmt = $link->prepare(
+                "DELETE FROM favorites where
+                tweet_id = ? AND user_id = ?"
+            )) {
+                $stmt->execute(
+                array(
+                    $this->tweet_id,
+                    $this->user_id
+                    )
+                );
+            }
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        } finally {
+            $link = null;
+            $stmt = null;
+        }
+    }
+
 }
