@@ -8,7 +8,8 @@
     <div class='username_div'>ユーザ名<?= $_SESSION['user_name'] ?></div>
     <a href="/tweet">つぶやく</a>
     <a href="/tweet/history">削除履歴</a>
-
+    <a href="/tweet/favorites">お気に入り履歴</a>
+    <a href="/tweet/retweets">リツイート履歴</a>
     <form action="user/logout" method="POST">
         <input type="submit" value="ログアウト">
     </form>
@@ -20,7 +21,7 @@
                 <?= $row['created_at'] ?>
             </div>
             <div class='usr_id_div'>
-                <?= $row['user_name'] ?>
+                <a href="/user/<?= $row['user_name'] ?>"><?= $row['user_name'] ?></a>
             </div>
             <div class='content_div'>
                 <?= $row['content'] ?>

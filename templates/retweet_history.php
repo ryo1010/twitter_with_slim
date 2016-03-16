@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>お気に入り履歴</title>
+    <title>リツイート履歴</title>
 </head>
 <body>
 <a href="/">もどる</a>
@@ -17,6 +17,7 @@
         </div>
         <div class='content_div'>
             <?= $row['content'] ?>
+            <a href="/retweet/delete/<?= $row['tweet_id']?>">取り消し</a>
         </div>
     <? } ?>
 </div>

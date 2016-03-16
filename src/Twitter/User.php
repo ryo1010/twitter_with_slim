@@ -5,9 +5,16 @@ namespace Twitter;
 class User extends DatabaseConnect
 {
 
+    private $user_id;
     private $user_name;
     private $user_password;
     private $user_mail;
+
+    public function setUserId($user_id)
+    {
+        $this->user_id = $user_id;
+        return $this;
+    }
 
     public function setUserName($user_name)
     {
@@ -15,13 +22,13 @@ class User extends DatabaseConnect
         return $this;
     }
 
-        public function setUserPassword($user_password)
+    public function setUserPassword($user_password)
     {
         $this->user_password = $user_password;
         return $this;
     }
 
-        public function setUserMail($user_mail)
+    public function setUserMail($user_mail)
     {
         $this->user_mail = $user_mail;
         return $this;
@@ -56,9 +63,9 @@ class User extends DatabaseConnect
     public function userCreate()
     {
         $link = $this->db_connect();
-        echo $this->user_name;
-        echo $this->user_password;
-        echo $this->user_mail;
+        $this->user_name;
+        $this->user_password;
+        $this->user_mail;
         $stmt = $link->prepare(
                 "INSERT INTO users(user_name,user_password,user_mail,created_at)
                 VALUES(?,?,?,now())"
@@ -76,4 +83,23 @@ class User extends DatabaseConnect
         session_destroy();
     }
 
+    public function userDetail()
+    {
+        $link = $this->db_connect();
+        $stmt = $link->prepare(
+            "SELECT users.user_name,tweets.tweet_id,tweets.content,tweets.created_at FROM users
+            LEFT JOIN tweets ON users.user_id = tweets.user_id
+            WHERE tweets.user_id = ?"
+        );
+        $stmt->execute(
+            array(
+               $this->user_id
+            )
+        );
+        if ($stmt->rowCount() > 0 ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

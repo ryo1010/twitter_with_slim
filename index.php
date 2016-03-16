@@ -1,7 +1,6 @@
 <?
 session_start();
 require 'vendor/autoload.php';
-require 'vendor/slim/slim/Slim/Slim.php';
 
 $app = new \Slim\Slim;
 
@@ -9,7 +8,7 @@ $app->post('/login', function () use ($app){
     $login_auth = new \Twitter\User();
     $login_auth
         ->setUserMail($app->request->post('mail_address'))
-        ->setUserPassword($app->request->post('password'));
+        ->setUserPassword(md5($app->request->post('password')));
     if ($login_auth->login_auth() == true) {
         $app->redirect("/");
     }else{
@@ -118,7 +117,7 @@ $app->post('/user/create/info' , function () use ($app) {
     $user_create = new \Twitter\User();
     $user_create
         ->setUserName($app->request->post('user_name'))
-        ->setUserPassword($app->request->post('user_password'))
+        ->setUserPassword(md5($app->request->post('user_password')))
         ->setUserMail($app->request->post('mail_address'))
         ->userCreate();
 });
@@ -131,8 +130,57 @@ $app->get('/favorite/:number' , function ($number) use ($app) {
     if ($tweet_favorite->tweetFavorite() == true) {
         $app->redirect('/');
     }else{
-        $app->render('/error',['error_info' => 'お気に入りできませんでした・']);
+        $app->render('error.php',['error_info' => 'お気に入りできませんでした。']);
     }
 });
+
+$app->get('/retweet/:number' , function ($number) use ($app) {
+    $tweet_retweet = new \Twitter\Tweet();
+    $tweet_retweet
+        ->setUserId($_SESSION['user_id'])
+        ->setTweetId($number);
+    if ($tweet_retweet->tweetRetweet() == true) {
+        $app->redirect('/');
+    }else{
+        $app->render('error.php',['error_info' => 'リツイートできませんでした。']);
+    }
+});
+
+$app->get('/retweet/delete/:number' , function ($number) use ($app) {
+    $retweet_delete = new \Twitter\Tweet();
+    $retweet_delete
+        ->setUserId($_SESSION['user_id'])
+        ->setTweetId($number);
+    if ($retweet_delete->tweetRetweetDelete() == true) {
+        $app->redirect('/');
+    }else{
+        $app->render('error.php',['error_info' => 'リツイートを取り消せませんでした。']);
+    }
+});
+
+$app->get('/tweet/favorites' , function () use ($app) {
+    $favorites_history = new \Twitter\Tweet();
+    $favorite_rows = $favorites_history
+        ->setUserId($_SESSION['user_id'])
+        ->tweetFavoriteHistory();
+    $app->render('favorite_history.php',['rows'=>$favorite_rows]);
+});
+
+$app->get('/tweet/retweets' , function () use ($app) {
+    $retweets_history = new \Twitter\Tweet();
+    $retweet_rows = $retweets_history
+        ->setUserId($_SESSION['user_id'])
+        ->tweetRetweetHistor();
+    $app->render('retweet_history.php',['rows'=>$retweet_rows]);
+});
+
+$app->get('/user/:user_id' , function ($user_id) use ($app) {
+    $user_detail = new \Twitter\User();
+    $user_detail->setUserId($user_id);
+    if ( $user_detail->userDetail() == true ) {
+        $app->render('user_detail.php',['user_info'=>'wa']);
+    }
+});
+
 
 $app->run();

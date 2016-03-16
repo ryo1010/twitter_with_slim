@@ -162,7 +162,7 @@ class Tweet extends DatabaseConnect
                 );
             }
             return true;
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             return false;
         } finally {
             $link = null;
@@ -210,7 +210,115 @@ class Tweet extends DatabaseConnect
                 );
             }
             return true;
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
+            return false;
+        } finally {
+            $link = null;
+            $stmt = null;
+        }
+    }
+
+    public function tweetRetweet()
+    {
+        try {
+            $link = $this->db_connect();
+            if ( $stmt = $link->prepare(
+                "INSERT INTO retweets (user_id,tweet_id,created_at)
+                VALUES(?,?,now())"
+            )) {
+                $stmt->execute(
+                array(
+                    $this->user_id,
+                    $this->tweet_id
+                    )
+                );
+            }
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        } finally {
+            $link = null;
+            $stmt = null;
+        }
+    }
+
+    public function tweetFavoriteHistory(){
+        try{
+            $link = $this->db_connect();
+            if ( $stmt = $link->prepare(
+                "SELECT
+                tweets.content,tweets.user_id,tweets.created_at,
+                favorites.tweet_id,
+                users.user_name
+                FROM favorites
+                LEFT JOIN tweets ON favorites.tweet_id = tweets.tweet_id
+                LEFT JOIN users ON users.user_id = tweets.user_id
+                WHERE favorites.user_id = ?
+                ORDER BY tweets.created_at DESC"
+            )) {
+                $stmt->execute(
+                array(
+                    $this->user_id,
+                    )
+                );
+            }
+            $favorite_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $favorite_rows;
+        } catch (PDOException $e) {
+
+        } finally {
+            $link = null;
+            $stmt = null;
+        }
+    }
+
+    public function tweetRetweetHistor(){
+        try{
+            $link = $this->db_connect();
+            if ( $stmt = $link->prepare(
+                "SELECT
+                tweets.content,tweets.user_id,tweets.created_at,
+                retweets.tweet_id,
+                users.user_name
+                FROM retweets
+                LEFT JOIN tweets ON retweets.tweet_id = tweets.tweet_id
+                LEFT JOIN users ON users.user_id = tweets.user_id
+                WHERE retweets.user_id = ?
+                ORDER BY tweets.created_at DESC"
+            )) {
+                $stmt->execute(
+                array(
+                    $this->user_id,
+                    )
+                );
+            }
+            $retweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $retweet_rows;
+        } catch (PDOException $e) {
+
+        } finally {
+            $link = null;
+            $stmt = null;
+        }
+    }
+
+public function tweetRetweetDelete()
+    {
+        try {
+            $link = $this->db_connect();
+            if ( $stmt = $link->prepare(
+                "DELETE FROM retweets where
+                tweet_id = ? AND user_id = ?"
+            )) {
+                $stmt->execute(
+                array(
+                    $this->tweet_id,
+                    $this->user_id
+                    )
+                );
+            }
+            return true;
+        } catch (PDOException $e) {
             return false;
         } finally {
             $link = null;
