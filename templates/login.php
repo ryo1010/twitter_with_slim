@@ -12,7 +12,7 @@
     </table>
 <input type="submit" value="ログイン">
 </form>
-<form action="/user/create/mail" method="GET">
+<form action="/user/create/mail" method="POST">
 <input type="submit" value="新規作成">
 </form>
 </body>

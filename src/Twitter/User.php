@@ -43,8 +43,82 @@ class User extends DatabaseConnect
         return $this;
     }
 
+    public function isLoginEnabled()
+    {
+        if (!isset($_SESSION['user_name'])
+            && !isset($_SESSION['user_id'])) {
+            return true;
+        }else{
+            return false;
+        }
+    }
 
-    public function login_auth()
+    public function isFollowingEnabled()
+    {
+        try {
+            $link = $this->db_connect();
+            $stmt = $link->prepare(
+                "SELECT * FROM user_follows
+                WHERE user_id = ? AND followed_user_id = ?"
+            );
+            $stmt->execute(
+                array(
+                    $this->follow_user_id,
+                    $this->user_id
+                )
+            );
+            if ($stmt->rowCount() == 1) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (Exception $e) {
+            return false;
+        } finally {
+            $stmt = null;
+            $link =null;
+        }
+    }
+
+    public function mailConfirmation()
+    {
+        try {
+            $link = $this->db_connect();
+            $stmt = $link->prepare(
+                "SELECT * FROM users
+                WHERE user_mail = ?"
+            );
+            $stmt->execute(
+                array(
+                   $this->user_mail,
+                )
+            );
+            if ($stmt->rowCount() == 1) {
+                return false;
+            } else {
+                return true;
+            }
+
+        } catch (Exception $e) {
+            return false;
+        } finally {
+            $stmt = null;
+            $link =null;
+        }
+    }
+
+    public function mailCheck()
+    {
+        $match = "/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/";
+        if (preg_match($match, $this->user_mail)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function loginAuth()
     {
         try{
             $link = $this->db_connect();
@@ -173,7 +247,6 @@ class User extends DatabaseConnect
             );
             if ($stmt->rowCount() > 0 ) {
                 $user_tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-                echo "string";
                 return $user_tweet_rows;
             } elseif ( $stmt->rowCount() == 0 ) {
                 return false;
@@ -239,9 +312,4 @@ class User extends DatabaseConnect
         }
     }
 
-    //ユーザーのツイートがなかったらの処理を書きたいけど考えるのめんどくさい
-    protected function userTweetNotFound()
-    {
-        $not_found = array('created_at' => '', );
-    }
 }

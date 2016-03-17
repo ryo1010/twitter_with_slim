@@ -11,21 +11,6 @@ class Tweet extends DatabaseConnect
     private $content;
     private $INSERTED = 0;
 
-    public function __construct(){
-        $this->login_auth();
-    }
-
-    public function login_auth()
-    {
-        if (!isset($_SESSION['user_name'])
-            && !isset($_SESSION['user_id'])) {
-
-            header('Location: /login');
-            exit();
-        }
-    }
-
-
     public function setTweetId($tweet_id)
     {
         $this->tweet_id = $tweet_id;
@@ -50,6 +35,14 @@ class Tweet extends DatabaseConnect
         return $this;
     }
 
+    private function isMyTweet($user_id)
+    {
+        if ($this->user_id == $user_id) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function tweetDisplay(){
         try {
@@ -57,9 +50,11 @@ class Tweet extends DatabaseConnect
             $stmt = $link->query(
                 "SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,
                 tweets.content,tweets.created_at,users.user_name
-                FROM tweets left join users
-                ON tweets.user_id = users.user_id
-                WHERE tweets.stutas = $this->INSERTED
+                FROM tweets
+                LEFT JOIN user_follows ON user_follows.followed_user_id = tweets.user_id
+                LEFT JOIN users ON tweets.user_id = users.user_id
+                where user_follows.followed_user_id = tweets.user_id OR tweets.user_id = $this->user_id
+                AND tweets.stutas = $this->INSERTED
                 ORDER BY tweets.created_at DESC"
             );
             $stmt->execute();
@@ -76,6 +71,7 @@ class Tweet extends DatabaseConnect
             $stmt = null;
         }
     }
+
 
     public function tweetInsert()
     {
@@ -121,13 +117,23 @@ class Tweet extends DatabaseConnect
             );
             $tweet_rows = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-            return $tweet_rows;
+            if ($this->isMyTweet($tweet_rows['user_id'])) {
+                $tweet_rows['content'] = $this->br2nl($tweet_rows['content']);
+                return $tweet_rows;
+            } else {
+                return false;
+            }
+
         } catch(PDOException $e) {
             echo $e->getMessage();
         } finally {
             $link = null;
             $stmt = null;
         }
+    }
+
+    private function br2nl($content) {
+        return preg_replace('/<br[[:space:]]*\/?[[:space:]]*>/i', "", $content);
     }
 
     public function tweetEditSubmit(){

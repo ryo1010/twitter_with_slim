@@ -11,7 +11,7 @@
 △* ユーザ登録・仮登録
 ○* お気に入り機能　登録・削除
 ○* リツイート機能　登録・削除
-×* フォロー機能
+○* フォロー機能　フォローフォロワーを見れるようにしたい
 
 users
 PK QK     QK     QK       登録状態　QK
@@ -93,6 +93,7 @@ CREATE TABLE user_follows (
 インサート文tweets
 insert into tweets (tweet_id,user_id,user_name,content) values(null,1,'user_name','test');
 
+よくわからないもの
 SELECT tweets.tweet_id,tweets.user_id,
 tweets.content,tweets.created_at,
 users.user_name,retweets.tweet_id,
@@ -100,3 +101,75 @@ retweets.user_id FROM tweets
 LEFT JOIN users ON tweets.user_id = users.user_id
 LEFT JOIN retweets ON retweets.tweet_id = tweets.tweet_id
 ORDER BY tweets.created_at DESC;
+
+フォローと自分のツイートのみ表示試作
+SELECT * FROM tweets
+LEFT JOIN user_follows ON user_follows.followed_user_id = tweets.user_id
+where user_follows.followed_user_id = tweets.user_id OR tweets.user_id = 2
+
+本番
+SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,
+tweets.content,tweets.created_at,users.user_name
+FROM tweets
+LEFT JOIN user_follows ON user_follows.followed_user_id = tweets.user_id
+LEFT JOIN users ON tweets.user_id = users.user_id
+where user_follows.followed_user_id = tweets.user_id OR tweets.user_id = 2
+AND tweets.stutas = 0
+ORDER BY tweets.created_at DESC
+
+
+CREATE TABLE `favorites` (
+  `user_id` int(11) NOT NULL,
+  `tweet_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`,`tweet_id`),
+  KEY `tweet_id_idx` (`tweet_id`),
+  CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`tweet_id`) REFERENCES `tweets` (`tweet_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `retweets` (
+  `user_id` int(11) NOT NULL,
+  `tweet_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  UNIQUE KEY `user_id` (`user_id`,`tweet_id`),
+  KEY `tweet_id_idx` (`tweet_id`),
+  CONSTRAINT `retweets_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  CONSTRAINT `retweets_ibfk_2` FOREIGN KEY (`tweet_id`) REFERENCES `tweets` (`tweet_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tweets` (
+  `tweet_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `stutas` tinyint(1) DEFAULT '0' COMMENT 'display 0 delete 1',
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`tweet_id`),
+  KEY `user_id_idx` (`user_id`),
+  CONSTRAINT `tweets_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `user_follows` (
+  `user_id` int(11) NOT NULL,
+  `followed_user_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`,`followed_user_id`),
+  KEY `followed_user_id_idx` (`followed_user_id`),
+  CONSTRAINT `user_follows_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  CONSTRAINT `user_follows_ibfk_2` FOREIGN KEY (`followed_user_id`) REFERENCES `users` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(30) NOT NULL,
+  `user_password` varchar(30) NOT NULL,
+  `user_mail` varchar(50) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_mail` (`user_mail`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
