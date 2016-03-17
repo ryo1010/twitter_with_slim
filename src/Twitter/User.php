@@ -99,6 +99,7 @@ class User extends DatabaseConnect
             $link = null;
         }
     }
+
     public function userLogOut()
     {
         try {
@@ -134,6 +135,27 @@ class User extends DatabaseConnect
         }
     }
 
+    public function userFind()
+    {
+        try {
+            $link = $this->db_connect();
+            $stmt = $link->prepare(
+                "SELECT * FROM users where user_id = ?"
+            );
+            $stmt->execute(array($this->user_id));
+            if ($stmt->rowCount() == 1  ) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            return false;
+        } finally {
+            $stmt = null;
+            $link = null;
+        }
+    }
+
     public function userDetail()
     {
         try {
@@ -151,11 +173,11 @@ class User extends DatabaseConnect
             );
             if ($stmt->rowCount() > 0 ) {
                 $user_tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                echo "string";
+                return $user_tweet_rows;
             } elseif ( $stmt->rowCount() == 0 ) {
-                $user_tweet_rows =
-                $this->userTweetNotFound();
+                return false;
             }
-            return $user_tweet_rows;
         } catch (Exception $e) {
             return false;
         } finally {

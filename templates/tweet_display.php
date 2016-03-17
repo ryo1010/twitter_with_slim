@@ -24,9 +24,6 @@
                 <a href='favorite/<?= $row['tweet_id'] ?>'>お気に入り</a>
                 <a href='retweet/<?= $row['tweet_id'] ?>'>リツイート</a>
             </div>
-
-                <input type="hidden" value="<?= $row['tweet_id'] ?>" name="tweet_id_hide">
-                <input type="submit" value="TEST">
             </form>
         <? } ?>
     </div>
