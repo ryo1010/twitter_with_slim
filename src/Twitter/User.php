@@ -9,6 +9,7 @@ class User extends DatabaseConnect
     private $user_name;
     private $user_password;
     private $user_mail;
+    private $user_number;
     private $INSETED = 0;
 
     private $follow_user_id;
@@ -40,6 +41,12 @@ class User extends DatabaseConnect
     public function setFollowUserId($follow_user_id)
     {
         $this->follow_user_id = $follow_user_id;
+        return $this;
+    }
+
+    public function setUserNumber($user_number)
+    {
+        $this->user_number = $user_number;
         return $this;
     }
 
@@ -310,6 +317,23 @@ class User extends DatabaseConnect
             $stmt = null;
             $link = null;
         }
+    }
+
+    public function createUserSendMail()
+    {
+        $transport = \Swift_SmtpTransport::newInstance('localhost', 25);
+        $mailer = \Swift_Mailer::newInstance($transport);
+
+        $message = \Swift_Message::newInstance()
+            ->setSubject('ツイッターモドキ・仮登録ありがとうございます。')
+            ->setTo($this->user_mail)
+            ->setFrom(['ryo.akahira@gmail.com' => 'ツイッターモドキ管理人'])
+            ->setBody(
+                '下記のアドレスにアクセスしてユーザー登録をしてください'
+                .'slim-twitter.jp/user/create/info/'.$this->user_number
+                );
+
+        $result = $mailer->send($message);
     }
 
 }

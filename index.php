@@ -186,16 +186,20 @@ $app->post('/user/create/mail', function () use ($app, $page_title) {
 
 $app->post('/user/create/mail/add', function () use ($app, $page_title, $error_info) {
     $confirmation = new \Twitter\User();
+    $mail = new \Twitter\User();
     $user_mail = htmlspecialchars(
         $app->request->post('mail_address'), ENT_QUOTES
     );
     $confirmation->setUserMail($user_mail);
-
     if ($confirmation->mailCheck() == true) {
         if ($confirmation->mailConfirmation()) {
             $user_id = uniqid(rand(100,999));
             $_SESSION['user_number'] = $user_id;
             $_SESSION['user_mail'] = $user_mail;
+
+            $mail->setUserMail($user_mail)
+                 ->setUserNumber($user_id)
+                 ->createUserSendMail($user_mail);
             $app->redirect("/mail/sent");
         } else {
             $app->render(
@@ -434,20 +438,27 @@ $app->get('/user/following/:user_id' , function ($user_id) use ($app, $page_titl
     }
 });
 
+$app->post('/tweet/search' , function () use ($app) {
+    $search_word = $app->request->post('search_word');
+    $app->render('tweet_search.php');
+});
+
 $app->get('/test' , function () use ($app) {
     $app->render('imgfileuplode.php');
 });
-
 $app->post('/test' , function () use ($app) {
     $app->render('imgfileseve.php');
 });
 
+$app->get('/mail/test' , function() use ($app) {
+
+
+});
 $app->notFound(function () use ($app) {
     $app->render(
-        'error.php',
-        ['error_info' => 'ページが見つかりません']
+    'error.php',
+    ['error_info' => 'ページが見つかりません']
     );
 });
-
 
 $app->run();
