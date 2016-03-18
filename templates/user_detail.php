@@ -7,7 +7,7 @@
     </div>
     <a href="/tweet">つぶやく</a>
     <a href="/tweet/favorites">お気に入り履歴</a>
-    <? if (isset($_SESSION['user_name'])) { ?>
+        <? if (isset($_SESSION['user_name'])) { ?>
         <form action="/user/logout" method="POST">
             <input type="submit" value="ログアウト">
         </form>

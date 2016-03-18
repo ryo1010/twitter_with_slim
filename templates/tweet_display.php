@@ -8,6 +8,9 @@
     <h1>ツイート一覧</h1>
     <div class="main">
         <? foreach ($rows as $row) { ?>
+        <?if (!empty($row['retweet_id'])) : ?>
+            -----↻リツイート-----
+        <? endif; ?>
             <div class='datetime_div'>
                 <?= $row['created_at'] ?>
             </div>

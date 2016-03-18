@@ -48,17 +48,23 @@ class Tweet extends DatabaseConnect
         try {
             $link = $this->db_connect();
             $stmt = $link->query(
-                "SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,
-                tweets.content,tweets.created_at,users.user_name
+                "SELECT DISTINCT  tweets.tweet_id, tweets.user_id,
+                tweets.content, tweets.created_at,
+                users.user_name, users.user_id,
+                retweets.tweet_id AS retweet_id
                 FROM tweets
                 LEFT JOIN user_follows ON user_follows.followed_user_id = tweets.user_id
+                    OR user_follows.user_id = tweets.user_id
+                LEFT JOIN retweets ON retweets.tweet_id = tweets.tweet_id
                 LEFT JOIN users ON tweets.user_id = users.user_id
-                where user_follows.followed_user_id = tweets.user_id OR tweets.user_id = $this->user_id
-                AND tweets.stutas = $this->INSERTED
-                ORDER BY tweets.created_at DESC"
+                    OR users.user_id = tweets.user_id
+                WHERE user_follows.user_id = $this->user_id OR tweets.user_id = $this->user_id
+                OR retweets.tweet_id = tweets.tweet_id
+                AND user_follows.followed_user_id = $this->user_id
+                ORDER BY tweets.created_at DESC;"
             );
             $stmt->execute();
-            if ($stmt->rowCount() > 1) {
+            if ($stmt->rowCount() >= 1) {
                 $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
                return $tweet_rows;
             }  else {
@@ -71,7 +77,6 @@ class Tweet extends DatabaseConnect
             $stmt = null;
         }
     }
-
 
     public function tweetInsert()
     {

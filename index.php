@@ -434,6 +434,14 @@ $app->get('/user/following/:user_id' , function ($user_id) use ($app, $page_titl
     }
 });
 
+$app->get('/test' , function () use ($app) {
+    $app->render('imgfileuplode.php');
+});
+
+$app->post('/test' , function () use ($app) {
+    $app->render('imgfileseve.php');
+});
+
 $app->notFound(function () use ($app) {
     $app->render(
         'error.php',

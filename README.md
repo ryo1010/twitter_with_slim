@@ -10,7 +10,7 @@
 
 △* ユーザ登録・仮登録
 ○* お気に入り機能　登録・削除
-○* リツイート機能　登録・削除
+△* リツイート機能　登録・削除
 ○* フォロー機能　フォローフォロワーを見れるようにしたい
 
 users
@@ -90,6 +90,15 @@ CREATE TABLE user_follows (
     UNIQUE(user_id,followed_user_id)
 );
 
+images_urlあとで
+CREATE TABLE `images` (
+  `tweet_id` INT NOT NULL,
+  `images_url` varchar(50) NOT NULL,
+  PRIMARY KEY (`tweet_id`,`images_url`),
+  KEY `tweet_id_idx` (`tweet_id`),
+  CONSTRAINT `images_ibfk_1` FOREIGN KEY (`tweet_id`) REFERENCES `tweets` (`tweet_id`),
+) ENGINE=InnoDB;
+
 インサート文tweets
 insert into tweets (tweet_id,user_id,user_name,content) values(null,1,'user_name','test');
 
@@ -102,20 +111,74 @@ LEFT JOIN users ON tweets.user_id = users.user_id
 LEFT JOIN retweets ON retweets.tweet_id = tweets.tweet_id
 ORDER BY tweets.created_at DESC;
 
-フォローと自分のツイートのみ表示試作
-SELECT * FROM tweets
-LEFT JOIN user_follows ON user_follows.followed_user_id = tweets.user_id
-where user_follows.followed_user_id = tweets.user_id OR tweets.user_id = 2
+------------------------------------
+フォロワーしか見れない
+SELECT retweets.tweet_id,tweets.user_id,tweets.content,
+retweets.user_id,user_follows.followed_user_id
+FROM tweets
+LEFT JOIN user_follows ON user_follows.user_id = tweets.user_id
+LEFT JOIN retweets ON retweets.tweet_id = tweets.tweet_id
+LEFT JOIN users ON users.user_id = tweets.user_id
+WHERE retweets.tweet_id = tweets.tweet_id
+AND user_follows.followed_user_id = $this->user_id;
 
-本番
-SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,
-tweets.content,tweets.created_at,users.user_name
+フォロワーとリツイートしたもの　その１
+SELECT DISTINCT  tweets.tweet_id, tweets.user_id,
+tweets.content, tweets.created_at,
+users.user_name, users.user_id,
+retweets.tweet_id AS retweet_id,
+retweets.user_id AS retweet_user_id
+FROM tweets
+LEFT JOIN user_follows ON user_follows.followed_user_id = tweets.user_id
+    OR user_follows.user_id = tweets.user_id
+LEFT JOIN retweets ON retweets.tweet_id = tweets.tweet_id
+LEFT JOIN users ON tweets.user_id = users.user_id AND users.user_id = retweets.user_id
+    OR users.user_id = tweets.user_id
+WHERE user_follows.user_id = 5 OR tweets.user_id = 5
+OR retweets.tweet_id = tweets.tweet_id
+AND user_follows.followed_user_id = 5
+ORDER BY tweets.created_at DESC
+
+フォロワーとリツイートしたもの　その２
+SELECT DISTINCT  tweets.tweet_id, tweets.user_id,
+tweets.content, tweets.created_at,
+users.user_name, users.user_id,
+retweets.tweet_id AS retweet_id,
+retweets.user_id AS retweet_user_id
+FROM tweets
+LEFT JOIN user_follows ON user_follows.followed_user_id = tweets.user_id
+    OR user_follows.user_id = tweets.user_id
+LEFT JOIN retweets ON retweets.tweet_id = tweets.tweet_id
+LEFT JOIN users ON users.user_id = retweets.user_id
+    OR users.user_id = tweets.user_id
+WHERE user_follows.user_id = 5 OR tweets.user_id = 5
+OR retweets.tweet_id = tweets.tweet_id
+AND user_follows.followed_user_id = 5
+ORDER BY tweets.created_at DESC
+
+
+ユーザーがリツイートした内容
+SELECT retweets.tweet_id,tweets.user_id,tweets.content,
+retweets.user_id,user_follows.followed_user_id
+FROM tweets
+LEFT JOIN user_follows ON user_follows.user_id = tweets.user_id
+LEFT JOIN retweets ON retweets.tweet_id = tweets.tweet_id
+LEFT JOIN users ON users.user_id = tweets.user_id
+WHERE retweets.tweet_id = tweets.tweet_id AND user_follows.followed_user_id = 5;
+
+
+
+誰リツイートしたか見れる
+SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,tweets.content,tweets.created_at,
+users.user_name,retweets.user_id
 FROM tweets
 LEFT JOIN user_follows ON user_follows.followed_user_id = tweets.user_id
 LEFT JOIN users ON tweets.user_id = users.user_id
-where user_follows.followed_user_id = tweets.user_id OR tweets.user_id = 2
+LEFT JOIN retweets ON retweets.tweet_id = tweets.tweet_id
+where user_follows.user_id = 5 OR tweets.user_id = 5
 AND tweets.stutas = 0
-ORDER BY tweets.created_at DESC
+ORDER BY tweets.created_at DESC;
+
 
 
 CREATE TABLE `favorites` (
