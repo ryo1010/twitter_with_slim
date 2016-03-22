@@ -94,9 +94,11 @@ images_urlあとで
 CREATE TABLE `images` (
   `tweet_id` INT NOT NULL,
   `images_url` varchar(50) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`tweet_id`,`images_url`),
   KEY `tweet_id_idx` (`tweet_id`),
-  CONSTRAINT `images_ibfk_1` FOREIGN KEY (`tweet_id`) REFERENCES `tweets` (`tweet_id`),
+  CONSTRAINT `images_ibfk_1` FOREIGN KEY (`tweet_id`) REFERENCES `tweets` (`tweet_id`)
 ) ENGINE=InnoDB;
 
 インサート文tweets
@@ -149,8 +151,7 @@ FROM tweets
 LEFT JOIN user_follows ON user_follows.followed_user_id = tweets.user_id
     OR user_follows.user_id = tweets.user_id
 LEFT JOIN retweets ON retweets.tweet_id = tweets.tweet_id
-LEFT JOIN users ON users.user_id = retweets.user_id
-    OR users.user_id = tweets.user_id
+LEFT JOIN users ON users.user_id = retweets.user_id OR users.user_id = tweets.user_id
 WHERE user_follows.user_id = 5 OR tweets.user_id = 5
 OR retweets.tweet_id = tweets.tweet_id
 AND user_follows.followed_user_id = 5
@@ -179,8 +180,39 @@ where user_follows.user_id = 5 OR tweets.user_id = 5
 AND tweets.stutas = 0
 ORDER BY tweets.created_at DESC;
 
+★誰がリツイートしたかやりたい
+public function retweetTweetDisplay($rows)
+{
+    $content_1 = "";
+    $content_2 = "";
+    $count = 0;
+    foreach ($rows as $row) {
+        $content_1 = $row['retweet_id'];
+        if ($content_1 == $content_2 AND $content_1 !== NULL) {
+            $tweet_user = $row['user_name'];
+            unset($rows[$count]);
+        }
+        $content_2 = $content_1;
+    $count++;
+    }
+    echo $tweet_user;
+    print_r($rows);
+}
 
-
+★ユーザーがフォローしてる人を見たい
+$app->get('/user/following/:user_id' , function ($user_id) use ($app, $page_title) {
+    $following = new \Twitter\User();
+    $follow
+        ->setUserId($_SESSION['user_id']);
+    if ($follow -> userFollowingList() == true) {
+        $app->redirect("/user/{$user_id}");
+    } else {
+        $app->render(
+            'error.php',
+            ['error_info' => '値を取得できませんでした']
+        );
+    }
+});
 CREATE TABLE `favorites` (
   `user_id` int(11) NOT NULL,
   `tweet_id` int(11) NOT NULL,

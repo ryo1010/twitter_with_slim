@@ -16,10 +16,15 @@
     <? } ?>
 
     <h1><?= $tweet_rows[0]['user_name'] ?>の情報</h1>
+
     <? if (isset($_SESSION['user_id'])) { ?>
-        <? if($tweet_rows[0]['user_id'] !== $_SESSION['user_id']) { ?>
-            <a href="/user/follow/<?= $tweet_rows[0]['user_id'] ?>"><?= $follow_status ?></a><br />
-        <? } ?>
+        <? if ($tweet_rows[0]['user_id'] !== $_SESSION['user_id']) : ?>
+            <? if ($follow_status == true ) : ?>
+                <a href="/user/refollow/<?= $tweet_rows[0]['user_id'] ?>">フォローをはずす</a><br />
+            <? else : ?>
+                <a href="/user/follow/<?= $tweet_rows[0]['user_id'] ?>">フォローする</a><br />
+            <? endif ; ?>
+        <? endif; ?>
     <? } ?>
 
     <a href="/user/following/<?= $tweet_rows[0]['user_id'] ?>">フォロー[]</a>

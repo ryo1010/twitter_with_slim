@@ -293,6 +293,33 @@ class User extends DatabaseConnect
         }
     }
 
+    public function userReFollow()
+    {
+        try {
+            $link = $this->db_connect();
+            $stmt = $link->prepare(
+                "DELETE FROM user_follows
+                 WHERE user_id = ? AND followed_user_id = ?"
+            );
+            $stmt->execute(
+                array(
+                   $this->user_id,
+                   $this->follow_user_id
+                )
+            );
+            if ($stmt->rowCount() > 0 ) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $e) {
+            return false;
+        } finally {
+            $stmt = null;
+            $link = null;
+        }
+    }
+
     public function userFollowingList()
     {
         try {
@@ -327,7 +354,7 @@ class User extends DatabaseConnect
         $message = \Swift_Message::newInstance()
             ->setSubject('ツイッターモドキ・仮登録ありがとうございます。')
             ->setTo($this->user_mail)
-            ->setFrom(['ryo.akahira@gmail.com' => 'ツイッターモドキ管理人'])
+            ->setFrom(['ryo@slim-twitter.jp' => 'ツイッターモドキ管理人'])
             ->setBody(
                 '下記のアドレスにアクセスしてユーザー登録をしてください'
                 .'slim-twitter.jp/user/create/info/'.$this->user_number

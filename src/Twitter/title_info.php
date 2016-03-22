@@ -16,5 +16,7 @@ $page_title = array(
 $error_info = array(
     'mail_not_correct' => "メールアドレスが正しくありません。",
     'mail_already' => "すでに登録されているメールアドレスです。",
-    'not_fount_tweet' => "ツイートを選択できませんでした。"
+    'not_fount_tweet' => "ツイートを選択できませんでした。",
+    'can_not_uplode' => "画像をアップロードできませんでした",
+    'file_type_Fraud' => "ファイル形式が不正です。"
 );

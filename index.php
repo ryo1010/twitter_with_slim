@@ -36,9 +36,6 @@ $app->get('/', function () use ($app, $page_title) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
-    if ((new \Twitter\User)->isLoginEnabled()) {
-        $app->redirect('/login');
-    }
     $tweet_time = new \Twitter\TweetTimeDiff();
     $tweet_rows = $tweet_time
                     ->setUserId($_SESSION['user_id'])
@@ -61,20 +58,35 @@ $app->get('/', function () use ($app, $page_title) {
     }
 });
 
-$app->post('/tweet/submit', function () use ($app){
-    $db_connect = new \Twitter\Tweet();
-    $tweet_content = htmlspecialchars(
-        $app->request->post('tweet_content'), ENT_QUOTES
-    );
+$app->post('/tweet/submit', function () use ($app, $error_info){
+    $tweet_submit = new \Twitter\Tweet();
+    $tweet_content = $tweet_submit
+        ->htmlEscape($app->request->post('tweet_content'));
     $tweet_content = nl2br($tweet_content);
-    $tweet_insert = $db_connect
+    $tweet_insert = $tweet_submit
             ->setUserId($_SESSION['user_id'])
-            ->setContent($tweet_content)
-            ->tweetInsert();
-    if ($tweet_insert == true) {
-        $app->redirect('/');
-    }else{
+            ->setContent($tweet_content);
+    $tweet_insert = $tweet_submit->tweetInsert();
+    $image_uplode_message = $tweet_submit -> imageUpload();
 
+    switch ($image_uplode_message) {
+        case true OR false:
+            $app->redirect('/');
+            break;
+        case 'can_not_upload':
+            $app->render(
+               'error.php',
+                ['error_info' => $error_info['can_not_uplode']]
+            );
+            break;
+        case 'file_type_Fraud':
+            $app->render(
+               'error.php',
+                ['error_info' => $error_info['file_type_Fraud']]
+            );
+            break;
+        default:
+            break;
     }
 });
 
@@ -106,9 +118,8 @@ $app->get('/tweet/edit/:number', function ($number) use ($app, $page_title, $err
 
 $app->post('/tweet/edit', function () use ($app){
     $edit_submit = new \Twitter\Tweet();
-    $tweet_content = htmlspecialchars(
-        $app->request->post('tweet_content'), ENT_QUOTES
-    );
+    $tweet_content = $edit_submit
+        ->htmlEscape($app->request->post('tweet_content'));
     $tweet_content = nl2br($tweet_content);
     $edit_submit
         ->setUserId($_SESSION['user_id'])
@@ -186,10 +197,10 @@ $app->post('/user/create/mail', function () use ($app, $page_title) {
 
 $app->post('/user/create/mail/add', function () use ($app, $page_title, $error_info) {
     $confirmation = new \Twitter\User();
+    $escape = new \Twitter\tweet();
     $mail = new \Twitter\User();
-    $user_mail = htmlspecialchars(
-        $app->request->post('mail_address'), ENT_QUOTES
-    );
+    $user_mail = $escape
+        ->htmlEscape($app->request->post('mail_address'));
     $confirmation->setUserMail($user_mail);
     if ($confirmation->mailCheck() == true) {
         if ($confirmation->mailConfirmation()) {
@@ -373,11 +384,12 @@ $app->get('/user/:user_id', function ($user_id) use ($app, $page_title) {
     }else {
         $detail->setFollowUserId($_SESSION['user_id']);
         if ($detail->isFollowingEnabled()) {
-            $follow_status = "フォローしてます";
+            $follow_status = true;
         } else {
-        $follow_status = "フォローする";
+            $follow_status = false;
         }
     }
+
     $user_name = $detail->selectUserName();
     if ($detail->userFind()) {
         $tweet_rows = $detail->userDetail();
@@ -424,36 +436,43 @@ $app->get('/user/follow/:user_id' , function ($user_id) use ($app, $page_title) 
     }
 });
 
-$app->get('/user/following/:user_id' , function ($user_id) use ($app, $page_title) {
-    $following = new \Twitter\User();
+$app->get('/user/refollow/:user_id' , function ($user_id) use ($app, $page_title) {
+    $follow = new \Twitter\User();
     $follow
-        ->setUserId($_SESSION['user_id']);
-    if ($follow -> userFollowingList() == true) {
+        ->setUserId($_SESSION['user_id'])
+        ->setFollowUserId($user_id);
+    if ($follow -> userReFollow() == true) {
         $app->redirect("/user/{$user_id}");
     } else {
         $app->render(
             'error.php',
-            ['error_info' => '値を取得できませんでした']
+            ['error_info' => 'フォローできませんでした']
         );
     }
 });
 
 $app->post('/tweet/search' , function () use ($app) {
-    $search_word = $app->request->post('search_word');
-    $app->render('tweet_search.php');
+    $tweet_search = new \Twitter\Tweet();
+    $search_word = htmlspecialchars(
+        $app->request->post('tweet_search'),
+        ENT_QUOTES
+    );
+    $tweet_search->setTweetSearch($search_word);
+    $tweet_search->searchWord();
+    $result = $tweet_search->tweetSearch();
+    $app->render('tweet_search.php',
+        ['search_word' => $search_word,'rows' => $result]
+    );
 });
 
 $app->get('/test' , function () use ($app) {
     $app->render('imgfileuplode.php');
 });
+
 $app->post('/test' , function () use ($app) {
     $app->render('imgfileseve.php');
 });
 
-$app->get('/mail/test' , function() use ($app) {
-
-
-});
 $app->notFound(function () use ($app) {
     $app->render(
     'error.php',
