@@ -486,9 +486,13 @@ class Tweet extends DatabaseConnect
             $link = $this->db_connect();
             $sql_test = "SELECT tweets.tweet_id, tweets.user_id,
                 tweets.content, tweets.created_at,
-                users.user_name, users.user_id
+                users.user_name, users.user_id,
+                images.images_url
                 FROM tweets
-                LEFT JOIN users ON tweets.user_id = users.user_id
+                LEFT JOIN users ON
+                    tweets.user_id = users.user_id
+                LEFT JOIN images
+                    ON images.tweet_id = tweets.tweet_id
                 WHERE $this->sql
                 ORDER BY tweets.created_at DESC";
             $stmt = $link->prepare(

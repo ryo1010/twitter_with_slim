@@ -7,7 +7,9 @@
 
     <h1>ツイート一覧</h1>
     <div class="main">
-        <?=$search_word?>を検索しました。
+        <div class="saerch_info">
+            「 <?=$search_word?> 」を検索しました。
+        </div>
         <? foreach ($rows as $row) { ?>
         <?if (!empty($row['retweet_id'])) : ?>
             -----↻リツイート-----
@@ -20,6 +22,13 @@
             </div>
             <div class='content_div'>
                 <?= $row['content'] ?>
+            </div>
+            <div class="image">
+                <? if($row['images_url'] !== null) : ?>
+                    <a href="/images/<?=$row['images_url']?>" target="_new">
+                        <img src="/images/<?=$row['images_url']?>" width="400">
+                    </a>
+                <? endif;?>
             </div>
             <div class='tweet_edit'>
                 <? if ($row['user_id'] == $_SESSION['user_id']) { ?>

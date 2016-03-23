@@ -8,9 +8,9 @@ $app = new \Slim\Slim;
 
 $app->post('/login', function () use ($app){
     $login_auth = new \Twitter\User();
-    $mail_address = htmlspecialchars(
-        $app->request->post('mail_address'), ENT_QUOTES
-    );
+    $escape = new \Twitter\Tweet();
+    $mail_address = $escape
+        ->htmlEscape($app->request->post('mail_address'));
     $login_auth
         ->setUserMail($mail_address)
         ->setUserPassword(md5($app->request->post('password')));
@@ -59,6 +59,7 @@ $app->get('/', function () use ($app, $page_title) {
 });
 
 $app->post('/tweet/submit', function () use ($app, $error_info){
+    echo "string";
     $tweet_submit = new \Twitter\Tweet();
     $tweet_content = $tweet_submit
         ->htmlEscape($app->request->post('tweet_content'));
@@ -68,7 +69,6 @@ $app->post('/tweet/submit', function () use ($app, $error_info){
             ->setContent($tweet_content);
     $tweet_insert = $tweet_submit->tweetInsert();
     $image_uplode_message = $tweet_submit -> imageUpload();
-
     switch ($image_uplode_message) {
         case true OR false:
             $app->redirect('/');
@@ -169,10 +169,6 @@ $app->get('/tweet', function () use ($app, $page_title) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
-    $app->render(
-        'header.php',
-        ['title' => $page_title['tweet_page']]
-    );
     $app->render('tweet.php');
 });
 
@@ -451,26 +447,27 @@ $app->get('/user/refollow/:user_id' , function ($user_id) use ($app, $page_title
     }
 });
 
-$app->post('/tweet/search' , function () use ($app) {
+$app->post('/tweet/search' , function () use ($app, $page_title) {
     $tweet_search = new \Twitter\Tweet();
-    $search_word = htmlspecialchars(
-        $app->request->post('tweet_search'),
-        ENT_QUOTES
-    );
+    $search_word = $tweet_search
+        ->htmlEscape($app->request->post('tweet_search'));
     $tweet_search->setTweetSearch($search_word);
     $tweet_search->searchWord();
     $result = $tweet_search->tweetSearch();
+    $app->render(
+        'header.php',
+        ['title' => $page_title['tweet_search']]
+    );
     $app->render('tweet_search.php',
         ['search_word' => $search_word,'rows' => $result]
     );
 });
 
-$app->get('/test' , function () use ($app) {
-    $app->render('imgfileuplode.php');
+$app->get('/ajax' , function () use ($app) {
+    $app->render('ajax.php');
 });
-
-$app->post('/test' , function () use ($app) {
-    $app->render('imgfileseve.php');
+$app->post('/hello' , function () use ($app) {
+    $app->render('hello.php');
 });
 
 $app->notFound(function () use ($app) {

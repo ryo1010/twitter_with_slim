@@ -1,5 +1,43 @@
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#send').click(function() {
+            $.ajax({
+                type: "GET",
+                url: "/tweet",
+                success: function(data, dataType) {
+                    $("#output").html(data);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    $("#output").html(errorThrown);
+                }
+            });
+            return false;
+        });
+
+        $('#output').on("click", "#tweet_submit", function() {
+            var data = {request : $('#tweet_content').val()};
+            alert(data);
+            /*$.ajax({
+                type: "GET",
+                url: "/tweet/submit",
+                data: data,
+                success: function(data, dataType) {
+                    $("#output").html(data);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    $("#output").html(errorThrown);
+                }
+            });*/
+            return false;
+        });
+    });
+    </script>
+    <form method="post" enctype="multipart/form-data" ;>
+        <input id="send" value="つぶやく" type="button" />
+        <div id="output"></div>
+    </form>
     <div class='username_div'>ユーザ名<?= $_SESSION['user_name'] ?></div>
-    <a href="/tweet">つぶやく</a>
     <a href="/tweet/favorites">お気に入り履歴</a>
     <form action="user/logout" method="POST">
         <input type="submit" value="ログアウト">
@@ -21,8 +59,8 @@
             </div>
             <div class="image">
                 <? if($row['images_url'] !== null) : ?>
-                    <a href="images/<?=$row['images_url']?>" target="_new">
-                        <img src="images/<?=$row['images_url']?>" width="400">
+                    <a href="/images/<?=$row['images_url']?>" target="_new">
+                        <img src="/images/<?=$row['images_url']?>" width="400">
                     </a>
                 <? endif;?>
             </div>

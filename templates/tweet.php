@@ -1,4 +1,3 @@
-<form action="/tweet/submit" method="POST" enctype="multipart/form-data">
     <table>
     <tr>
         <td>
@@ -12,11 +11,10 @@
     </tr>
     <tr>
         <td>
-             <input type="submit" name="tweet_button" value="ツイート">
+             <input type="submit" id="tweet_submit" value="ツイート">
         </td>
     </tr>
     </table>
-</form>
 
 </body>
 </html>

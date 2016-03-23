@@ -7,6 +7,7 @@ $page_title = array(
     'mail_sent' => "メール送信完了",
     'tweet_page' => "つぶやく",
     'tweet_edit' => "ツイート編集",
+    'tweet_search' => "ツイート検索",
     'tweet_delete_page' => "ツイート削除履歴",
     'favorites_history_page' => "お気に入り履歴",
     'retweets_history_page' => "リツイート履歴",
