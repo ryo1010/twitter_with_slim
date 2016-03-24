@@ -12,6 +12,11 @@
     </tr>
     <tr>
         <td>
+        <!-- 画像があるかないかの判断書く！ -->
+        <img src="/images/<?= $rows['images_url']?>" width=300>
+        </td>
+    <tr>    <tr>
+        <td>
         <TEXTAREA name="tweet_content" cols="40" rows="5"><?= $rows['content']?></TEXTAREA>
         </td>
     <tr>

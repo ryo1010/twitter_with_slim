@@ -1,7 +1,7 @@
 <?
 namespace Twitter;
 
-class TweetTimeDiff extends Tweet
+class TweetTimeDiff
 {
 
     public function tweetTimeChenge($tweet_rows)

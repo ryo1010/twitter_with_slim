@@ -2,16 +2,14 @@
 
 namespace Twitter;
 
-class User extends DatabaseConnect
+class User extends Database
 {
-
+    const INSETED = 0;
     private $user_id;
     private $user_name;
     private $user_password;
     private $user_mail;
     private $user_number;
-    private $INSETED = 0;
-
     private $follow_user_id;
 
     public function setUserId($user_id)
@@ -63,7 +61,7 @@ class User extends DatabaseConnect
     public function isFollowingEnabled()
     {
         try {
-            $link = $this->db_connect();
+            $link = $this->db_con;
             $stmt = $link->prepare(
                 "SELECT * FROM user_follows
                 WHERE user_id = ? AND followed_user_id = ?"
@@ -128,7 +126,7 @@ class User extends DatabaseConnect
     public function loginAuth()
     {
         try{
-            $link = $this->db_connect();
+            $link = $this->db_con;
             $stmt = $link->prepare(
                 "SELECT * FROM users
                 WHERE user_mail = ?
@@ -193,7 +191,7 @@ class User extends DatabaseConnect
 
     public function selectUserName(){
         try {
-            $link = $this->db_connect();
+            $link = $this->db_con;
             $stmt = $link->prepare(
                 "SELECT user_name from users WHERE user_id = ?"
             );
@@ -219,7 +217,7 @@ class User extends DatabaseConnect
     public function userFind()
     {
         try {
-            $link = $this->db_connect();
+            $link = $this->db_con;
             $stmt = $link->prepare(
                 "SELECT * FROM users where user_id = ?"
             );
@@ -240,17 +238,18 @@ class User extends DatabaseConnect
     public function userDetail()
     {
         try {
-            $link = $this->db_connect();
+            $link = $this->db_con;
             $stmt = $link->prepare(
                 "SELECT users.user_name,users.user_id,tweets.tweet_id,tweets.content,tweets.created_at FROM users
                 LEFT JOIN tweets ON users.user_id = tweets.user_id
-                WHERE tweets.user_id = ? AND tweets.stutas = $this->INSETED
+                WHERE tweets.user_id = ? AND tweets.stutas = ?
                 ORDER BY tweets.created_at DESC"
             );
             $stmt->execute(
-                array(
-                   $this->user_id
-                )
+                [
+                   $this->user_id,
+                   self::INSETED
+                ]
             );
             if ($stmt->rowCount() > 0 ) {
                 $user_tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -269,7 +268,7 @@ class User extends DatabaseConnect
     public function userFollow()
     {
         try {
-            $link = $this->db_connect();
+            $link = $this->db_con;
             $stmt = $link->prepare(
                 "INSERT INTO user_follows(user_id,followed_user_id,created_at)
                 VALUES(?,?,now())"
@@ -296,16 +295,16 @@ class User extends DatabaseConnect
     public function userReFollow()
     {
         try {
-            $link = $this->db_connect();
+            $link = $this->db_con;
             $stmt = $link->prepare(
                 "DELETE FROM user_follows
                  WHERE user_id = ? AND followed_user_id = ?"
             );
             $stmt->execute(
-                array(
+                [
                    $this->user_id,
                    $this->follow_user_id
-                )
+                ]
             );
             if ($stmt->rowCount() > 0 ) {
                 return true;
@@ -323,15 +322,15 @@ class User extends DatabaseConnect
     public function userFollowingList()
     {
         try {
-            $link = $this->db_connect();
+            $link = $this->db_con;
             $stmt = $link->prepare(
                 "SELECT * from user_follows
                 WHERE user_id = ?"
             );
             $stmt->execute(
-                array(
+                [
                    $this->user_id,
-                )
+                ]
             );
             if ($stmt->rowCount() > 0 ) {
                 return true;

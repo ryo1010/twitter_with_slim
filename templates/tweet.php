@@ -6,7 +6,7 @@
     </tr>
     <tr>
         <td>
-             <input type="file" name="upfile" size="30" />
+            <input type="file" name="upfile" size="30" />
         </td>
     </tr>
     <tr>

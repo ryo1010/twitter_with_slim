@@ -63,7 +63,7 @@
                 <a href="/user/<?= $row['user_id'] ?>"><?= $row['user_name'] ?></a>
             </div>
             <div class='content_div'>
-                <?= $row['content'] ?>
+                <?= nl2br($row['content']) ?>
             </div>
             <div class="image">
                 <? if($row['images_url'] !== null) : ?>

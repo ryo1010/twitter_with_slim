@@ -1,7 +1,6 @@
 <?
 session_start();
 require 'vendor/autoload.php';
-require 'src/Twitter/title_info.php';
 
 
 $app = new \Slim\Slim;
@@ -32,24 +31,25 @@ $app->post('/user/logout', function () use ($app){
     }
 });
 
-$app->get('/', function () use ($app, $page_title) {
+$app->get('/', function () use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
-    $tweet_time = new \Twitter\TweetTimeDiff();
-    $tweet_rows = $tweet_time
+    $tweet_display = new \Twitter\Tweet();
+    $tweet_rows = $tweet_display
                     ->setUserId($_SESSION['user_id'])
                     ->tweetDisplay();
     if ($tweet_rows == "not_found" ) {
         $app->render(
             'error.php',
-            ['error_info' => 'ツイートがありません。']
+            ['error_info' => \Twitter\Info::PAGETITLE['not_found']]
         );
     } else {
-        $tweet_rows = $tweet_time->tweetTimeChenge($tweet_rows);
+        $tweet_time_diff = new \Twitter\TweetTimeDiff();
+        $tweet_rows = $tweet_time_diff -> tweetTimeChenge($tweet_rows);
         $app->render(
             'header.php',
-            ['title' => $page_title['top_page']]
+            ['title' => \Twitter\Info::PAGETITLE['top_page']]
         );
         $app->render(
             'tweet_display.php',
@@ -58,11 +58,10 @@ $app->get('/', function () use ($app, $page_title) {
     }
 });
 
-$app->post('/tweet/submit', function () use ($app, $error_info){
+$app->post('/tweet/submit', function () use ($app){
     $tweet_submit = new \Twitter\Tweet();
     $tweet_content = $tweet_submit
         ->htmlEscape($app->request->post('tweet_content'));
-    $tweet_content = nl2br($tweet_content);
     $tweet_insert = $tweet_submit
             ->setUserId($_SESSION['user_id'])
             ->setContent($tweet_content);
@@ -91,7 +90,7 @@ $app->post('/tweet/submit', function () use ($app, $error_info){
     */
 });
 
-$app->get('/tweet/edit/:number', function ($number) use ($app, $page_title, $error_info) {
+$app->get('/tweet/edit/:number', function ($number) use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
@@ -103,7 +102,7 @@ $app->get('/tweet/edit/:number', function ($number) use ($app, $page_title, $err
     if ($select_tweet !== false ) {
         $app->render(
             'header.php',
-            ['title' => $page_title['tweet_edit']]
+            ['title' => \Twitter\Info::PAGETITLE['tweet_edit']]
         );
         $app->render(
             'tweet_edit.php',
@@ -112,7 +111,7 @@ $app->get('/tweet/edit/:number', function ($number) use ($app, $page_title, $err
     } else {
         $app->render(
            'error.php',
-            ['error_info' => $error_info['not_fount_tweet']]
+            ['error_info' => \Twitter\Info::ERRORINFO['not_fount_tweet']]
         );
     }
 });
@@ -121,7 +120,6 @@ $app->post('/tweet/edit', function () use ($app){
     $edit_submit = new \Twitter\Tweet();
     $tweet_content = $edit_submit
         ->htmlEscape($app->request->post('tweet_content'));
-    $tweet_content = nl2br($tweet_content);
     $edit_submit
         ->setUserId($_SESSION['user_id'])
         ->setTweetId($app->request->post('tweet_id'))
@@ -148,7 +146,7 @@ $app->post('/tweet/delete', function () use ($app) {
     }
 });
 
-$app->get('/tweet/history', function () use ($app, $page_title) {
+$app->get('/tweet/history', function () use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
@@ -158,7 +156,7 @@ $app->get('/tweet/history', function () use ($app, $page_title) {
         ->tweetHistory();
     $app->render(
         'header.php',
-        ['title' => $page_title['tweet_delete_page']]
+        ['title' => \Twitter\Info::PAGETITLE['tweet_delete_page']]
     );
     $app->render(
         'tweet_history.php',
@@ -166,17 +164,17 @@ $app->get('/tweet/history', function () use ($app, $page_title) {
     );
 });
 
-$app->get('/tweet', function () use ($app, $page_title) {
+$app->get('/tweet', function () use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
     $app->render('tweet.php');
 });
 
-$app->get('/login', function () use ($app, $page_title) {
+$app->get('/login', function () use ($app) {
     $app->render(
         'header.php',
-        ['title' => $page_title['login_page']]
+        ['title' => \Twitter\Info::PAGETITLE['login_page']]
     );
     $app->render(
         'login.php',
@@ -184,15 +182,15 @@ $app->get('/login', function () use ($app, $page_title) {
     );
 });
 
-$app->post('/user/create/mail', function () use ($app, $page_title) {
+$app->post('/user/create/mail', function () use ($app) {
     $app->render(
         'header.php',
-        ['title' => $page_title['user_pre_mail_page']]
+        ['title' => \Twitter\Info::PAGETITLE['user_pre_mail_page']]
     );
     $app->render('user_pre_mail.php');
 });
 
-$app->post('/user/create/mail/add', function () use ($app, $page_title, $error_info) {
+$app->post('/user/create/mail/add', function () use ($app) {
     $confirmation = new \Twitter\User();
     $escape = new \Twitter\tweet();
     $mail = new \Twitter\User();
@@ -212,18 +210,17 @@ $app->post('/user/create/mail/add', function () use ($app, $page_title, $error_i
         } else {
             $app->render(
                 'error.php',
-                ['error_info' => $error_info['mail_already']]
+                ['error_info' => \Twitter\Info::ERRORINFO['mail_already']]
             );
         }
     } else {
         $app->render(
             'error.php',
-            ['error_info' => $error_info['mail_not_correct']]
+            ['error_info' => \Twitter\Info::ERRORINFO['mail_not_correct']]
         );
-
     }
-
 });
+
 $app->get('/mail/sent', function () use ($app) {
     if (isset($_SESSION['user_mail']) &&
                 isset($_SESSION['user_number'])) {
@@ -235,22 +232,22 @@ $app->get('/mail/sent', function () use ($app) {
     } else {
         $app->render(
             'error.php',
-            ['error_info' => 'URLが正しくありません']
+            ['error_info' => \Twitter\Info::ERRORINFO['url_erro']]
         );
     }
 });
 
-$app->get('/user/create/info/:number', function ($number) use ($app, $page_title, $error_info) {
+$app->get('/user/create/info/:number', function ($number) use ($app) {
     if ($number == $_SESSION['user_number']) {
         $app->render(
             'header.php',
-            ['title' => $page_title['user_info_page']]
+        ['title' => \Twitter\Info::PAGETITLE['user_info_page']]
         );
         $app->render('user_info.php');
      } else {
         $app->render(
             'error.php',
-            ['error_info' => 'メールに届いたURLを正しく入力してください']
+            ['error_info' => \Twitter\Info::ERRORINFO['create_user_url_erro']]
         );
      }
 });
@@ -269,7 +266,7 @@ $app->get('/favorite/:number', function ($number) use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
-    $tweet_favorite = new \Twitter\Tweet();
+    $tweet_favorite = new \Twitter\Favorite();
     $tweet_favorite
         ->setUserId($_SESSION['user_id'])
         ->setTweetId($number);
@@ -278,7 +275,7 @@ $app->get('/favorite/:number', function ($number) use ($app) {
     }else{
         $app->render(
             'error.php',
-            ['error_info' => 'お気に入りできませんでした。']
+            ['error_info' => \Twitter\Info::ERRORINFO['can_not_favorite']]
         );
     }
 });
@@ -287,7 +284,7 @@ $app->get('/retweet/:number', function ($number) use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
-    $tweet_retweet = new \Twitter\Tweet();
+    $tweet_retweet = new \Twitter\Retweet();
     $tweet_retweet
         ->setUserId($_SESSION['user_id'])
         ->setTweetId($number);
@@ -296,7 +293,7 @@ $app->get('/retweet/:number', function ($number) use ($app) {
     }else{
         $app->render(
             'error.php',
-            ['error_info' => 'リツイートできませんでした。']
+            ['error_info' => \Twitter\Info::ERRORINFO['can_not_retweet']]
         );
     }
 });
@@ -305,7 +302,7 @@ $app->get('/retweet/delete/:number', function ($number) use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
-    $retweet_delete = new \Twitter\Tweet();
+    $retweet_delete = new \Twitter\Retweet();
     $retweet_delete
         ->setUserId($_SESSION['user_id'])
         ->setTweetId($number);
@@ -314,7 +311,7 @@ $app->get('/retweet/delete/:number', function ($number) use ($app) {
     }else{
         $app->render(
             'error.php',
-            ['error_info' => 'リツイートを取り消せませんでした。']
+            ['error_info' => \Twitter\Info::ERRORINFO['can_not_retweet_delete']]
         );
     }
 });
@@ -323,7 +320,7 @@ $app->get('/favorite/delete/:number', function ($number) use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
-    $favorite_delete = new \Twitter\Tweet();
+    $favorite_delete = new \Twitter\Favorite();
     $favorite_delete
         ->setUserId($_SESSION['user_id'])
         ->setTweetId($number);
@@ -332,48 +329,32 @@ $app->get('/favorite/delete/:number', function ($number) use ($app) {
     }else{
         $app->render(
             'error.php',
-            ['error_info' => 'リツイートを取り消せませんでした。']
+            ['error_info' => \Twitter\Info::ERRORINFO['can_not_favorite_delete']]
         );
     }
 });
 
-$app->get('/tweet/favorites', function () use ($app, $page_title) {
+$app->get('/tweet/favorites', function () use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
-    $favorites_history = new \Twitter\Tweet();
+
+    $favorites_history = new \Twitter\Favorite();
     $favorite_rows = $favorites_history
         ->setUserId($_SESSION['user_id'])
         ->tweetFavoriteHistory();
     $app->render(
         'header.php',
-        ['title' => $page_title['favorites_history_page']]
+        ['title' => \Twitter\Info::PAGETITLE['favorites_history_page']]
     );
+
     $app->render(
         'favorite_history.php',
         ['rows'=>$favorite_rows]
     );
 });
 
-$app->get('/tweet/retweets', function () use ($app, $page_title) {
-    if ((new \Twitter\User)->isLoginEnabled()) {
-        $app->redirect('/login');
-    }
-    $retweets_history = new \Twitter\Tweet();
-    $retweet_rows = $retweets_history
-        ->setUserId($_SESSION['user_id'])
-        ->tweetRetweetHistor();
-    $app->render(
-        'header.php',
-        ['title' => $page_title['retweets_history_page']]
-    );
-    $app->render(
-        'retweet_history.php',
-        ['rows'=>$retweet_rows]
-    );
-});
-
-$app->get('/user/:user_id', function ($user_id) use ($app, $page_title) {
+$app->get('/user/:user_id', function ($user_id) use ($app) {
     $detail = new \Twitter\User();
     $detail->setUserId($user_id);
     if ((new \Twitter\User)->isLoginEnabled()) {
@@ -393,7 +374,7 @@ $app->get('/user/:user_id', function ($user_id) use ($app, $page_title) {
         if ( $tweet_rows !== false ) {
              $app->render(
                 'header.php',
-                ['title' => $user_name.$page_title['user_detail_page']]
+                ['title' => $user_name.\Twitter\Info::PAGETITLE['user_detail_page']]
             );
             $app->render(
                 'user_detail.php',
@@ -403,7 +384,7 @@ $app->get('/user/:user_id', function ($user_id) use ($app, $page_title) {
         } else {
             $app->render(
                 'header.php',
-                ['title' => $user_name.$page_title['user_detail_page']]
+                ['title' => $user_name.\Twitter\Info::PAGETITLE['user_detail_page']]
             );
             $app->render(
                 'user_detail_no_tweet.php',
@@ -413,12 +394,12 @@ $app->get('/user/:user_id', function ($user_id) use ($app, $page_title) {
     } else {
         $app->render(
             'error.php',
-            ['error_info' => 'ユーザーが存在しません']
+            ['error_info' => \Twitter\Info::ERRORINFO['not_found_user']]
         );
     }
 });
 
-$app->get('/user/follow/:user_id' , function ($user_id) use ($app, $page_title) {
+$app->get('/user/follow/:user_id' , function ($user_id) use ($app) {
     $follow = new \Twitter\User();
     $follo
         ->setUserId($_SESSION['user_id'])
@@ -428,12 +409,12 @@ $app->get('/user/follow/:user_id' , function ($user_id) use ($app, $page_title) 
     } else {
         $app->render(
             'error.php',
-            ['error_info' => 'フォローできませんでした']
+            ['error_info' => \Twitter\Info::ERRORINFO['can_not_follow']]
         );
     }
 });
 
-$app->get('/user/refollow/:user_id' , function ($user_id) use ($app, $page_title) {
+$app->get('/user/refollow/:user_id' , function ($user_id) use ($app) {
     $follow = new \Twitter\User();
     $follow
         ->setUserId($_SESSION['user_id'])
@@ -443,21 +424,19 @@ $app->get('/user/refollow/:user_id' , function ($user_id) use ($app, $page_title
     } else {
         $app->render(
             'error.php',
-            ['error_info' => 'フォローできませんでした']
+            ['error_info' => \Twitter\Info::ERRORINFO['can_not_follow']]
         );
     }
 });
 
-$app->post('/tweet/search' , function () use ($app, $page_title) {
-    $tweet_search = new \Twitter\Tweet();
+$app->post('/tweet/search' , function () use ($app) {
+    $tweet_search = new \Twitter\Search();
     $search_word = $tweet_search
         ->htmlEscape($app->request->post('tweet_search'));
-    $tweet_search->setTweetSearch($search_word);
-    $tweet_search->searchWord();
-    $result = $tweet_search->tweetSearch();
+    $result = $tweet_search->tweetSearch($search_word);
     $app->render(
         'header.php',
-        ['title' => $page_title['tweet_search']]
+        ['title' => \Twitter\Info::PAGETITLE['tweet_search']]
     );
     $app->render('tweet_search.php',
         ['search_word' => $search_word,'rows' => $result]
@@ -467,7 +446,7 @@ $app->post('/tweet/search' , function () use ($app, $page_title) {
 $app->notFound(function () use ($app) {
     $app->render(
     'error.php',
-    ['error_info' => 'ページが見つかりません']
+    ['error_info' => \Twitter\Info::ERRORINFO['not_found_page']]
     );
 });
 
