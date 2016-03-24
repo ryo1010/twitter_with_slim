@@ -16,24 +16,33 @@
         });
 
         $('#output').on("click", "#tweet_submit", function() {
-            var data = {request : $('#tweet_content').val()};
-            alert(data);
-            /*$.ajax({
-                type: "GET",
-                url: "/tweet/submit",
-                data: data,
-                success: function(data, dataType) {
-                    $("#output").html(data);
-                },
-                error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    $("#output").html(errorThrown);
+            try {
+                var fd = new FormData();
+                if ($("input[name='upfile']").val()!== '') {
+                    fd.append( "file", $("input[name='upfile']").prop("files")[0] );
                 }
-            });*/
-            return false;
+                fd.append("tweet_content",$("#tweet_content").val());
+                  var postData = {
+                    type : "POST",
+                    dataType : "text",
+                    data : fd,
+                    processData : false,
+                    contentType : false
+                  };
+                  $.ajax(
+                    "/tweet/submit", postData
+                  ).done(function( text ){
+                    console.log(text);
+                  });
+            }catch (e) {
+                alert("エラー！");
+            }finally{
+                return false;
+            }
         });
     });
     </script>
-    <form method="post" enctype="multipart/form-data" ;>
+    <form id="upload-form" method="post" enctype="multipart/form-data" onSubmit="return upload(this);">
         <input id="send" value="つぶやく" type="button" />
         <div id="output"></div>
     </form>

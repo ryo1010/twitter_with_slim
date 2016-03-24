@@ -268,3 +268,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_mail` (`user_mail`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+            location ~ \.(json|yml)$ {
+                deny all;
+            }

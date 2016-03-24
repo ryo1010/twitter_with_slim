@@ -1,7 +1,7 @@
     <table>
     <tr>
         <td>
-             <textarea class="tweet" name="tweet_content" cols="40" rows="5"></textarea>
+             <textarea class="tweet" id="tweet_content" name="tweet_content" cols="40" rows="5"></textarea>
         </td>
     </tr>
     <tr>

@@ -59,7 +59,6 @@ $app->get('/', function () use ($app, $page_title) {
 });
 
 $app->post('/tweet/submit', function () use ($app, $error_info){
-    echo "string";
     $tweet_submit = new \Twitter\Tweet();
     $tweet_content = $tweet_submit
         ->htmlEscape($app->request->post('tweet_content'));
@@ -69,6 +68,7 @@ $app->post('/tweet/submit', function () use ($app, $error_info){
             ->setContent($tweet_content);
     $tweet_insert = $tweet_submit->tweetInsert();
     $image_uplode_message = $tweet_submit -> imageUpload();
+    /*
     switch ($image_uplode_message) {
         case true OR false:
             $app->redirect('/');
@@ -88,6 +88,7 @@ $app->post('/tweet/submit', function () use ($app, $error_info){
         default:
             break;
     }
+    */
 });
 
 $app->get('/tweet/edit/:number', function ($number) use ($app, $page_title, $error_info) {
@@ -461,13 +462,6 @@ $app->post('/tweet/search' , function () use ($app, $page_title) {
     $app->render('tweet_search.php',
         ['search_word' => $search_word,'rows' => $result]
     );
-});
-
-$app->get('/ajax' , function () use ($app) {
-    $app->render('ajax.php');
-});
-$app->post('/hello' , function () use ($app) {
-    $app->render('hello.php');
 });
 
 $app->notFound(function () use ($app) {

@@ -87,7 +87,7 @@ class Tweet extends DatabaseConnect
                 return "not_found";
             }
         } catch (PDOException $e) {
-            echo $e->Message();
+
         } finally {
             $link = null;
             $stmt = null;
@@ -108,15 +108,13 @@ class Tweet extends DatabaseConnect
             $content_2 = $content_1;
         $count++;
         }
-        print_r($rows);
-        echo $tweet_user;
     }
 
     public function imageUpload()
     {
-        if (is_uploaded_file($_FILES["upfile"]["tmp_name"])) {
+        if (is_uploaded_file($_FILES["file"]["tmp_name"])) {
             if (!$check = array_search(
-                mime_content_type($_FILES['upfile']['tmp_name']),
+                mime_content_type($_FILES['file']['tmp_name']),
                 array(
                     'gif' => 'image/gif',
                     'jpg' => 'image/jpeg',
@@ -126,11 +124,10 @@ class Tweet extends DatabaseConnect
                 )) {
                 return 'file_type_Fraud';
             }
-            $file_name = uniqid("slim_twitter")."_".$_FILES["upfile"]["name"];
-            if (move_uploaded_file($_FILES["upfile"]["tmp_name"], "/mnt/akahira/twitter_with_slim/images/" . $file_name)) {
+            $file_name = uniqid("slim_twitter")."_".$_FILES["file"]["name"];
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], "/mnt/akahira/twitter_with_slim/images/" . $file_name)) {
                 $is_insert = $this->imageInsert($file_name);
                 if ($is_insert == true) {
-                    echo "インサートしました";
                     return true;
                 }
             } else {
@@ -143,7 +140,6 @@ class Tweet extends DatabaseConnect
 
     public function imageInsert($file_name)
     {
-        echo $this->tweet_id;
         try {
             $link = $this->db_connect();
             $stmt = $link->prepare(
@@ -159,7 +155,7 @@ class Tweet extends DatabaseConnect
             return true;
 
         } catch (PDOException $e) {
-            echo $e->getMessage();
+
         } finally {
             $link = null;
             $stmt = null;
@@ -192,7 +188,7 @@ class Tweet extends DatabaseConnect
             return true;
 
         } catch (PDOException $e) {
-            echo $e->getMessage();
+
         } finally {
             $link = null;
             $stmt = null;
@@ -227,7 +223,7 @@ class Tweet extends DatabaseConnect
             }
 
         } catch(PDOException $e) {
-            echo $e->getMessage();
+
         } finally {
             $link = null;
             $stmt = null;
@@ -248,7 +244,7 @@ class Tweet extends DatabaseConnect
             $stmt->execute(array($this->content,$this->tweet_id,$this->user_id));
             return true;
         } catch (PDOException $e) {
-            echo $e->getMessage();
+
         } finally {
             $link = null;
             $stmt = null;
