@@ -3,6 +3,7 @@
 <head>
     <title><?= $title ?></title>
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
 <form action="/tweet/search" method="POST">

@@ -1,4 +1,3 @@
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script>
     $(document).ready(function() {
         $('#send').click(function() {
@@ -24,7 +23,7 @@
                 fd.append("tweet_content",$("#tweet_content").val());
                   var postData = {
                     type : "POST",
-                    dataType : "text",
+                    dataType : "json",
                     data : fd,
                     processData : false,
                     contentType : false

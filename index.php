@@ -420,7 +420,7 @@ $app->get('/user/:user_id', function ($user_id) use ($app, $page_title) {
 
 $app->get('/user/follow/:user_id' , function ($user_id) use ($app, $page_title) {
     $follow = new \Twitter\User();
-    $follow
+    $follo
         ->setUserId($_SESSION['user_id'])
         ->setFollowUserId($user_id);
     if ($follow -> userFollow() == true) {
