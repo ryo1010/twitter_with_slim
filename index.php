@@ -2,8 +2,18 @@
 session_start();
 require 'vendor/autoload.php';
 
+$today = new DateTime('now', new DateTimeZone("Asia/Tokyo"));
+$logWriter = new \Slim\logWriter(
+    fopen('./logs/' . $today->format('Y-m-d'), 'a'));
 
-$app = new \Slim\Slim;
+$config = array(
+    'log.level' => \Slim\Log::ERROR,
+    'log.writer' => $logWriter
+    );
+
+$app = new \Slim\Slim($config);
+
+
 
 $app->post('/login', function () use ($app){
     $login_auth = new \Twitter\User();
@@ -35,14 +45,16 @@ $app->get('/', function () use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
+    $display_number = 1;
     $tweet_display = new \Twitter\Tweet();
     $tweet_rows = $tweet_display
                     ->setUserId($_SESSION['user_id'])
+                    ->setDisplayNumber($display_number)
                     ->tweetDisplay();
     if ($tweet_rows == "not_found" ) {
         $app->render(
             'error.php',
-            ['error_info' => \Twitter\Info::PAGETITLE['not_found']]
+            ['error_info' => \Twitter\Info::ERRORINFO['not_found']]
         );
     } else {
         $tweet_time_diff = new \Twitter\TweetTimeDiff();
@@ -59,7 +71,7 @@ $app->get('/', function () use ($app) {
 });
 
 $app->post('/tweet/submit', function () use ($app){
-    $tweet_submit = new \Twitter\Tweet();
+    $tweet_submit = new \Twitter\Images();
     $tweet_content = $tweet_submit
         ->htmlEscape($app->request->post('tweet_content'));
     $tweet_insert = $tweet_submit
@@ -88,6 +100,20 @@ $app->post('/tweet/submit', function () use ($app){
             break;
     }
     */
+});
+
+$app->post('/tweet/submit/after', function () use ($app) {
+    $tweet = new \Twitter\Tweet();
+    $tweet
+        ->setUserId($_SESSION['user_id'])
+        ->setTweetId($app->request->post('tweet_id'));
+    $tweet_rows = $tweet->newTweetDisplay();
+    $tweet_time_diff = new \Twitter\TweetTimeDiff();
+    $tweet_rows = $tweet_time_diff -> tweetTimeChenge($tweet_rows);
+    $app->render(
+           'new_tweet.php',
+            ['rows' => $tweet_rows]
+        );
 });
 
 $app->get('/tweet/edit/:number', function ($number) use ($app) {
@@ -144,24 +170,6 @@ $app->post('/tweet/delete', function () use ($app) {
     }else{
 
     }
-});
-
-$app->get('/tweet/history', function () use ($app) {
-    if ((new \Twitter\User)->isLoginEnabled()) {
-        $app->redirect('/login');
-    }
-    $history = new \Twitter\Tweet();
-    $history_rows = $history
-        ->setUserId($_SESSION['user_id'])
-        ->tweetHistory();
-    $app->render(
-        'header.php',
-        ['title' => \Twitter\Info::PAGETITLE['tweet_delete_page']]
-    );
-    $app->render(
-        'tweet_history.php',
-        ['rows' => $history_rows]
-    );
 });
 
 $app->get('/tweet', function () use ($app) {
@@ -401,7 +409,7 @@ $app->get('/user/:user_id', function ($user_id) use ($app) {
 
 $app->get('/user/follow/:user_id' , function ($user_id) use ($app) {
     $follow = new \Twitter\User();
-    $follo
+    $follow
         ->setUserId($_SESSION['user_id'])
         ->setFollowUserId($user_id);
     if ($follow -> userFollow() == true) {
@@ -431,9 +439,17 @@ $app->get('/user/refollow/:user_id' , function ($user_id) use ($app) {
 
 $app->post('/tweet/search' , function () use ($app) {
     $tweet_search = new \Twitter\Search();
+    $tweet_time_diff = new \Twitter\TweetTimeDiff();
+
     $search_word = $tweet_search
         ->htmlEscape($app->request->post('tweet_search'));
-    $result = $tweet_search->tweetSearch($search_word);
+
+    $result = $tweet_search
+        ->tweetSearch($search_word);
+
+    $result = $tweet_time_diff
+        -> tweetTimeChenge($result);
+
     $app->render(
         'header.php',
         ['title' => \Twitter\Info::PAGETITLE['tweet_search']]

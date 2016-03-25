@@ -8,7 +8,8 @@ class Retweet extends Tweet
     public function tweetRetweet()
     {
         try {
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             if ( $stmt = $link->prepare(
                 "INSERT INTO retweets (user_id,tweet_id,created_at)
                 VALUES(?,?,now())"
@@ -32,7 +33,8 @@ class Retweet extends Tweet
     public function tweetRetweetDelete()
     {
         try {
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             if ( $stmt = $link->prepare(
                 "DELETE FROM retweets where
                 tweet_id = ? AND user_id = ?"

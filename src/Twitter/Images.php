@@ -6,7 +6,7 @@ class Images extends Tweet
 {
     public function imageUpload()
     {
-        if (is_uploaded_file($_FILES["file"]["tmp_name"])) {
+        if (isset($_FILES["file"]) && is_uploaded_file($_FILES["file"]["tmp_name"])) {
             if (!$check = array_search(
                 mime_content_type($_FILES['file']['tmp_name']),
                 array(
@@ -35,7 +35,8 @@ class Images extends Tweet
     public function imageInsert($file_name)
     {
         try {
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             $stmt = $link->prepare(
                 "INSERT INTO images(tweet_id,images_url,created_at)
                  VALUES(?,?,now())"

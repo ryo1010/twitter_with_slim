@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>エラー</title>
+  <title>エラー</title>
 </head>
 <body>
 <h1>エラー</h1>

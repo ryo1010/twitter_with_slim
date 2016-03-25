@@ -1,17 +1,3 @@
-<img src="">
-<form id="upload-form" method="post" enctype="multipart/form-data">
-  <input id="send" value="つぶやく" type="button" />
-  <div id="output"></div>
-</form>
-<div class='username_div'>ユーザ名<?= $_SESSION['user_name'] ?></div>
-<a href="/tweet/favorites">お気に入り履歴</a>
-<form action="user/logout" method="POST">
-  <input type="submit" value="ログアウト">
-</form>
-<h1>ツイート一覧</h1>
-<input type="hidden" id="last_tweet" value="<?= $rows[0]['tweet_id'] ?>">
-<div class="main">
-  <div class="new_tweet"></div>
   <? foreach ($rows as $row) { ?>
   <? if (!empty($row['retweet_id']) AND $row['user_id'] !== $_SESSION['user_id']) : ?>
   -----↻リツイート-----
@@ -41,6 +27,3 @@
     <? }?>
   </div>
   <? } ?>
-</div>
-</body>
-</html>

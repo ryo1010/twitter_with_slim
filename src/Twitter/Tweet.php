@@ -2,14 +2,16 @@
 
 namespace Twitter;
 
-class Tweet extends Database
+class Tweet
 {
 
-    public $INSERTED = 0;
-    protected $tweeet_id;
+    const INSERTED = 0;
+    const TWEET_HISTORY = 1;
+    protected $tweet_id;
     protected $usere_id;
     protected $usere_name;
     protected $conteent;
+    protected $display_number;
 
     public function setTweetId($tweet_id)
     {
@@ -35,19 +37,19 @@ class Tweet extends Database
         return $this;
     }
 
-    private function isMyTweet($user_id)
+    public function setDisplayNumber($display_number)
     {
-        if ($this->user_id == $user_id) {
-            return true;
-        } else {
-            return false;
-        }
+        $this->display_number = $display_number;
+        return $this;
     }
 
-    public function tweetDisplay(){
+    public function tweetDisplay()
+    {
+        echo $this->display_number;
         try {
-            $link = $this->db_con;
-            $stmt = $link->query(
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
+            $stmt = $link->prepare(
                 "SELECT DISTINCT  tweets.tweet_id, tweets.user_id,
                 tweets.content, tweets.created_at,
                 users.user_name, users.user_id,
@@ -64,13 +66,71 @@ class Tweet extends Database
                 LEFT JOIN images
                     ON images.tweet_id = tweets.tweet_id
                 WHERE
-                user_follows.followed_user_id = $this->user_id OR
-                (user_follows.user_id = $this->user_id OR
-                tweets.user_id = $this->user_id OR retweets.tweet_id = tweets.tweet_id)
-                AND tweets.stutas = $this->INSERTED
+                user_follows.followed_user_id = ? OR
+                (user_follows.user_id = ? OR
+                tweets.user_id = ? OR retweets.tweet_id = tweets.tweet_id)
+                AND tweets.stutas = ?
+                ORDER BY tweets.created_at DESC
+                LIMIT $this->display_number,5;"
+            );
+            $stmt->execute(
+                [
+                    $this->user_id,
+                    $this->user_id,
+                    $this->user_id,
+                    self::INSERTED
+                ]
+                );
+            if ($stmt->rowCount() > 0) {
+                $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+               return $tweet_rows;
+            }  else {
+                return "not_found";
+            }
+        } catch (PDOException $e) {
+            return false;
+        } finally {
+            $stmt = null;
+        }
+    }
+
+    public function newTweetDisplay()
+    {
+                try {
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
+            $stmt = $link->prepare(
+                "SELECT DISTINCT  tweets.tweet_id, tweets.user_id,
+                tweets.content, tweets.created_at,
+                users.user_name, users.user_id,
+                images.images_url,
+                retweets.tweet_id AS retweet_id
+                FROM tweets
+                LEFT JOIN user_follows
+                    ON user_follows.followed_user_id = tweets.user_id
+                    OR user_follows.user_id = tweets.user_id
+                LEFT JOIN retweets
+                    ON retweets.tweet_id = tweets.tweet_id
+                LEFT JOIN users
+                    ON users.user_id = tweets.user_id
+                LEFT JOIN images
+                    ON images.tweet_id = tweets.tweet_id
+                WHERE
+                user_follows.followed_user_id = ? OR
+                (user_follows.user_id = ? OR
+                tweets.user_id = ? OR retweets.tweet_id = tweets.tweet_id)
+                AND tweets.stutas = ? AND tweets.tweet_id > ?
                 ORDER BY tweets.created_at DESC;"
             );
-            $stmt->execute();
+            $stmt->execute(
+                [
+                    $this->user_id,
+                    $this->user_id,
+                    $this->user_id,
+                    self::INSERTED,
+                    $this->tweet_id
+                ]
+                );
             if ($stmt->rowCount() >= 1) {
                 $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
                return $tweet_rows;
@@ -78,7 +138,7 @@ class Tweet extends Database
                 return "not_found";
             }
         } catch (PDOException $e) {
-
+            return false;
         } finally {
             $stmt = null;
         }
@@ -92,7 +152,8 @@ class Tweet extends Database
     public function tweetInsert()
     {
         try {
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             $stmt = $link->prepare(
                 "INSERT INTO tweets(user_id,content,created_at)
                  VALUES(?,?,now())"
@@ -116,7 +177,8 @@ class Tweet extends Database
 
     public function tweetEditSelect(){
         try {
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             $stmt = $link->prepare(
                 "SELECT tweets.tweet_id, tweets.user_id,
                 tweets.content, tweets.created_at, users.user_name,
@@ -144,7 +206,7 @@ class Tweet extends Database
             }
 
         } catch(PDOException $e) {
-
+            return false;
         } finally {
             $link = null;
             $stmt = null;
@@ -153,7 +215,8 @@ class Tweet extends Database
 
     public function tweetEditSubmit(){
         try {
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             $stmt = $link->prepare(
                 "UPDATE tweets SET content = ?
                  WHERE tweet_id = ? AND user_id = ?"
@@ -168,7 +231,7 @@ class Tweet extends Database
             return true;
 
         } catch (PDOException $e) {
-
+            return false;
         } finally {
             $link = null;
             $stmt = null;
@@ -178,7 +241,8 @@ class Tweet extends Database
     public function tweetDelete()
     {
         try {
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             $STATUS = 1;
             if ( $stmt = $link->prepare(
                 "UPDATE tweets SET stutas = ?
@@ -201,27 +265,12 @@ class Tweet extends Database
         }
     }
 
-    public function tweetHistory()
+    private function isMyTweet($user_id)
     {
-        $link = $this->db_con;
-        $TWEET_HISTORY = 1;
-        if ($stmt = $link->prepare(
-            "SELECT tweets.tweet_id,tweets.user_id,tweets.stutas,
-            tweets.content,tweets.created_at,users.user_name
-            FROM tweets left join users
-            ON tweets.user_id = users.user_id
-            WHERE tweets.user_id = ? AND
-            tweets.stutas = $TWEET_HISTORY ORDER BY tweets.created_at DESC"
-        )) {
-            $stmt->execute(
-                [
-                    $this->user_id
-                ]
-            );
-            $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        if ($this->user_id == $user_id) {
+            return true;
+        } else {
+            return false;
         }
-        $stmt=null;
-        $link=null;
-        return $tweet_rows;
     }
 }

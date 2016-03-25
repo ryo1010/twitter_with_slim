@@ -11,9 +11,9 @@ class Search extends Tweet
     public function tweetSearch($search_word)
     {
         $this->searchWord($search_word);
-
         try {
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             $sql_test = "SELECT tweets.tweet_id, tweets.user_id,
                 tweets.content, tweets.created_at,
                 users.user_name, users.user_id,
@@ -23,14 +23,15 @@ class Search extends Tweet
                     tweets.user_id = users.user_id
                 LEFT JOIN images
                     ON images.tweet_id = tweets.tweet_id
-                WHERE $this->sql AND tweets.stutas = $this->INSERTED
+                WHERE tweets.stutas = ? AND $this->sql
                 ORDER BY tweets.created_at DESC";
 
             $stmt = $link->prepare(
                 $sql_test
             );
 
-                $count = 1;
+                $count = 2;
+                $stmt->bindValue(1,parent::INSERTED,\PDO::PARAM_STR);
                 foreach ($this->sql_words as $word) {
                     $stmt->bindValue($count,$word,\PDO::PARAM_STR);
                     $count++;

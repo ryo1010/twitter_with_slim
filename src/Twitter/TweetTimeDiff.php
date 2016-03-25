@@ -15,22 +15,23 @@ class TweetTimeDiff
 
     protected function tweet_time_diff($tweettime)
     {
-        $now_datetime = date("Y-m-d H:i");
-        $tweettime_diff =
-        (strtotime($now_datetime) - strtotime($tweettime));
+        $tweet_date = new \DateTimeImmutable($tweettime);
+        $now_date = new \DateTimeImmutable();
+        $interval = $now_date->diff($tweet_date);
+        if ($interval->format('%a') == 0 ) {
 
-        if ($tweettime_diff < 60) {
-            $tweettime_diff = "今さっき";
-        } elseif ($tweettime_diff < 3600) {
-            $tweettime_diff
-            = (floor($tweettime_diff / 60 )) . "分前";
-        } elseif ($tweettime_diff < 86400) {
-            $tweettime_diff
-            = (floor($tweettime_diff / 3600 )) . "時間前";
-        } elseif ($tweettime_diff > 86400) {
-            $tweettime_diff
-            = date("m月d日",strtotime($tweettime));
+            if ($interval->format('%h') > 0 ) {
+                return $interval->format('%h時間前');
+
+            }elseif ($interval->format('%i') > 0 ) {
+                return $interval->format('%i分前');
+
+            }elseif ($interval->format('%s') > 0) {
+                return $interval->format('%s秒前');
+            }
+
+        } elseif($interval->format('%a') > 0) {
+            return $tweet_date->format('m月d日');
         }
-        return $tweettime_diff;
     }
 }

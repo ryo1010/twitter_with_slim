@@ -8,7 +8,8 @@ class Favorite extends Tweet
     public function tweetFavorite()
     {
         try {
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             if ( $stmt = $link->prepare(
                 "INSERT INTO favorites (user_id,tweet_id,created_at)
                 VALUES(?,?,now())"
@@ -32,7 +33,8 @@ class Favorite extends Tweet
     public function tweetFavoriteHistory()
     {
         try{
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             if ( $stmt = $link->prepare(
                 "SELECT
                 tweets.content,tweets.user_id,tweets.created_at,
@@ -63,7 +65,8 @@ class Favorite extends Tweet
     public function tweetFavoriteDelete()
     {
         try {
-            $link = $this->db_con;
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
             if ( $stmt = $link->prepare(
                 "DELETE FROM favorites where
                 tweet_id = ? AND user_id = ?"
