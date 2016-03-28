@@ -2,9 +2,10 @@
 <html>
 <head>
   <title><?= $title ?></title>
-  <link rel="stylesheet" type="text/css" href="/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
   <script src="/js/jquery-2.2.2.min.js"></script>
   <script src="/js/tweet_submit.js"></script>
+  <script src="/js/tweet_load.js"></script>
 </head>
 <body>
 <form action="/tweet/search" method="POST">

@@ -12,6 +12,7 @@ class Info
         'mail_sent' => "メール送信完了",
         'tweet_page' => "つぶやく",
         'tweet_edit' => "ツイート編集",
+        'tweet_select' => "ツイート選択",
         'tweet_search' => "ツイート検索",
         'tweet_delete_page' => "ツイート削除履歴",
         'favorites_history_page' => "お気に入り履歴",

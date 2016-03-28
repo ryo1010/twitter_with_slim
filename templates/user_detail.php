@@ -27,8 +27,8 @@
     <? endif; ?>
   <? } ?>
 
-  <a href="/user/following/<?= $tweet_rows[0]['user_id'] ?>">フォロー[]</a>
-  <a href="/user/follower/<?= $tweet_rows[0]['user_id'] ?>">フォロワー[]</a>
+  <!-- <a href="/user/following/<?= $tweet_rows[0]['user_id'] ?>">フォロー[]</a>
+  <a href="/user/follower/<?= $tweet_rows[0]['user_id'] ?>">フォロワー[]</a>-->
   <div class="main">
     <? foreach ($tweet_rows as $row) { ?>
       <div class='datetime_div'>

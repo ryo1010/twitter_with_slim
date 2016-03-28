@@ -1,0 +1,306 @@
+exception 'ErrorException' with message 'PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /mnt/akahira/twitter_with_slim/src/Twitter/Tweet.php:83
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'PDOStatement::e...', '/mnt/akahira/tw...', 83, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/Tweet.php(83): PDOStatement->execute(Array)
+#2 /mnt/akahira/twitter_with_slim/index.php(53): Twitter\Tweet->tweetDisplay()
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(469): Slim\Slim->run()
+#11 {main}
+exception 'ErrorException' with message 'Undefined variable: row' in /mnt/akahira/twitter_with_slim/templates/tweet_select.php:30
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/templates/tweet_select.php(30): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 30, Array)
+#1 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(278): require('/mnt/akahira/tw...')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(255): Slim\View->render('tweet_select.ph...', NULL)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(243): Slim\View->fetch('tweet_select.ph...', NULL)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(757): Slim\View->display('tweet_select.ph...')
+#5 /mnt/akahira/twitter_with_slim/index.php(493): Slim\Slim->render('tweet_select.ph...', Array)
+#6 [internal function]: {closure}('256')
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#13 /mnt/akahira/twitter_with_slim/index.php(509): Slim\Slim->run()
+#14 {main}
+exception 'ErrorException' with message 'Undefined variable: row' in /mnt/akahira/twitter_with_slim/templates/tweet_select.php:18
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/templates/tweet_select.php(18): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 18, Array)
+#1 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(278): require('/mnt/akahira/tw...')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(255): Slim\View->render('tweet_select.ph...', NULL)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(243): Slim\View->fetch('tweet_select.ph...', NULL)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(757): Slim\View->display('tweet_select.ph...')
+#5 /mnt/akahira/twitter_with_slim/index.php(493): Slim\Slim->render('tweet_select.ph...', Array)
+#6 [internal function]: {closure}('253')
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#13 /mnt/akahira/twitter_with_slim/index.php(509): Slim\Slim->run()
+#14 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(88): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(519): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(88): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(519): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(88): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(519): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(88): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(519): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(88): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(519): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(88): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(519): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: tweet_rows' in /mnt/akahira/twitter_with_slim/index.php:83
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(83): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 83, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(511): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined variable: display_number' in /mnt/akahira/twitter_with_slim/index.php:92
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(92): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 92, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(534): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined variable: display_number' in /mnt/akahira/twitter_with_slim/index.php:92
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(92): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 92, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(534): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined variable: display_number' in /mnt/akahira/twitter_with_slim/index.php:92
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(92): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 92, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(534): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:87
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(87): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 87, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(534): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:86
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(86): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 86, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(533): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:86
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(86): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 86, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(533): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:86
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(86): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 86, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(533): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:86
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(86): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 86, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(533): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:86
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(86): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 86, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(533): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:86
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(86): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 86, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(533): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:85
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(85): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 85, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(532): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:85
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(85): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 85, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(532): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:85
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(85): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 85, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(532): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: display_limit' in /mnt/akahira/twitter_with_slim/index.php:85
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(85): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 85, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(532): Slim\Slim->run()
+#9 {main}

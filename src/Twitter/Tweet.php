@@ -43,9 +43,14 @@ class Tweet
         return $this;
     }
 
+    public function setDisplayLimit($display_limit)
+    {
+        $this->display_limit = $display_limit;
+        return $this;
+    }
+
     public function tweetDisplay()
     {
-        echo $this->display_number;
         try {
             $db = new \Twitter\Database();
             $link = $db->db_con;
@@ -70,8 +75,8 @@ class Tweet
                 (user_follows.user_id = ? OR
                 tweets.user_id = ? OR retweets.tweet_id = tweets.tweet_id)
                 AND tweets.stutas = ?
-                ORDER BY tweets.created_at DESC
-                LIMIT $this->display_number,5;"
+                ORDER BY tweets.created_at DESC, tweets.tweet_id DESC
+                LIMIT $this->display_number, $this->display_limit"
             );
             $stmt->execute(
                 [
@@ -208,6 +213,45 @@ class Tweet
         } catch(PDOException $e) {
             return false;
         } finally {
+            $link = null;
+            $stmt = null;
+        }
+    }
+
+    public function tweetSelect()
+    {
+    try {
+        $db = new \Twitter\Database();
+        $link = $db->db_con;
+        $stmt = $link->prepare(
+            "SELECT tweets.tweet_id, tweets.user_id,
+            tweets.content, tweets.created_at, users.user_name,
+            images.images_url
+            FROM tweets
+            left join users ON
+            tweets.user_id = users.user_id
+            left join images ON
+            images.tweet_id = tweets.tweet_id
+            WHERE tweets.tweet_id = ? AND tweets.user_id = ?
+            ORDER BY tweets.created_at DESC"
+        );
+        $stmt->execute(
+            [
+                $this->tweet_id,
+                $this->user_id
+            ]
+        );
+        $tweet_rows = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        if ($this->isMyTweet($tweet_rows['user_id'])) {
+            return $tweet_rows;
+        } else {
+            return false;
+        }
+
+    } catch(PDOException $e) {
+            return false;
+    } finally {
             $link = null;
             $stmt = null;
         }

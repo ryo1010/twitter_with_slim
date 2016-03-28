@@ -45,11 +45,18 @@ $app->get('/', function () use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
-    $display_number = 1;
+    if (isset($_GET['display_number']) && isset($_GET['display_limit'])) {
+        $display_number = $_GET['display_number'];
+        $display_limit = $_GET['display_limit'];
+    } else {
+        $display_number = 0;
+        $display_limit = 10;
+    }
     $tweet_display = new \Twitter\Tweet();
     $tweet_rows = $tweet_display
                     ->setUserId($_SESSION['user_id'])
                     ->setDisplayNumber($display_number)
+                    ->setDisplayLimit($display_limit)
                     ->tweetDisplay();
     if ($tweet_rows == "not_found" ) {
         $app->render(
@@ -69,6 +76,29 @@ $app->get('/', function () use ($app) {
         );
     }
 });
+
+$app->post('/', function () use ($app) {
+    if ((new \Twitter\User)->isLoginEnabled()) {
+        $app->redirect('/login');
+    }
+    $display_number = $_POST['display_number'];
+    $display_limit = $_POST['display_limit'];
+    $tweet_display = new \Twitter\Tweet();
+    $tweet_rows = $tweet_display
+                    ->setUserId($_SESSION['user_id'])
+                    ->setDisplayNumber($display_number)
+                    ->setDisplayLimit($display_limit)
+                    ->tweetDisplay();
+    if ($tweet_rows !== "not_found" ) {
+        $tweet_time_diff = new \Twitter\TweetTimeDiff();
+        $tweet_rows = $tweet_time_diff -> tweetTimeChenge($tweet_rows);
+        $app->render(
+            'new_tweet.php',
+            ['rows' => $tweet_rows]
+        );
+    }
+});
+
 
 $app->post('/tweet/submit', function () use ($app){
     $tweet_submit = new \Twitter\Images();
@@ -457,6 +487,33 @@ $app->post('/tweet/search' , function () use ($app) {
     $app->render('tweet_search.php',
         ['search_word' => $search_word,'rows' => $result]
     );
+});
+
+
+$app->get('/tweet/select/:number' , function ($number) use ($app) {
+    if ((new \Twitter\User)->isLoginEnabled()) {
+            $app->redirect('/login');
+        }
+        $tweet_select = new \Twitter\Tweet();
+        $select_tweet = $tweet_select
+            ->setUserId($_SESSION['user_id'])
+            ->setTweetId($number)
+            ->tweetEditSelect($number,$_SESSION['user_id']);
+        if ($select_tweet !== false ) {
+            $app->render(
+                'header.php',
+                ['title' => \Twitter\Info::PAGETITLE['tweet_select']]
+            );
+            $app->render(
+                'tweet_select.php',
+                ['rows' => $select_tweet]
+            );
+        } else {
+            $app->render(
+               'error.php',
+                ['error_info' => \Twitter\Info::ERRORINFO['not_fount_tweet']]
+            );
+        }
 });
 
 $app->notFound(function () use ($app) {
