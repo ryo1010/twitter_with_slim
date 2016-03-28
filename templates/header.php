@@ -6,6 +6,7 @@
   <script src="/js/jquery-2.2.2.min.js"></script>
   <script src="/js/tweet_submit.js"></script>
   <script src="/js/tweet_load.js"></script>
+  <script src="/js/dropzone.min.js"></script>
 </head>
 <body>
 <form action="/tweet/search" method="POST">

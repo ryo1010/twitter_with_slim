@@ -19,7 +19,7 @@ class Images extends Tweet
                 return 'file_type_Fraud';
             }
             $file_name = uniqid("slim_twitter")."_".$_FILES["file"]["name"];
-            if (move_uploaded_file($_FILES["file"]["tmp_name"], "/mnt/akahira/twitter_with_slim/images/" . $file_name)) {
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], "/root/images/images/" . $file_name)) {
                 $is_insert = $this->imageInsert($file_name);
                 if ($is_insert == true) {
                     return true;
@@ -47,6 +47,7 @@ class Images extends Tweet
                     $file_name
                 ]
             );
+            echo $file_name;
             return true;
 
         } catch (PDOException $e) {

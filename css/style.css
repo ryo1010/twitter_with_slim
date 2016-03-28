@@ -41,3 +41,17 @@ textarea{
 .tweet_edit{
   margin-bottom: 20px;
 }
+
+#drug_image{
+  width:150px;
+  height:150px;
+  padding:10px;
+  border:3px solid;
+}
+
+<!-- なぜかアップロードしたサムネイルがずれるので補足 -->
+.dz-details img{
+    position:absolute;
+    top:0;
+    left:0;
+}

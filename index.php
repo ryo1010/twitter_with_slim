@@ -99,6 +99,14 @@ $app->post('/', function () use ($app) {
     }
 });
 
+$app->post('/tweet/images', function () use ($app){
+    $tweet_submit = new \Twitter\Images();
+    $image_uplode_message = $tweet_submit -> imageUpload();
+    $app->render(
+       'error.php',
+        ['error_info' => $image_uplode_message]
+    );
+});
 
 $app->post('/tweet/submit', function () use ($app){
     $tweet_submit = new \Twitter\Images();
