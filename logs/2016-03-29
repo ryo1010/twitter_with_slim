@@ -376,3 +376,20 @@ Stack trace:
 #9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
 #10 /mnt/akahira/twitter_with_slim/index.php(567): Slim\Slim->run()
 #11 {main}
+exception 'ErrorException' with message 'Undefined index: user_name' in /mnt/akahira/twitter_with_slim/templates/tweet_search.php:1
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/templates/tweet_search.php(1): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 1, Array)
+#1 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(278): require('/mnt/akahira/tw...')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(255): Slim\View->render('tweet_search.ph...', NULL)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(243): Slim\View->fetch('tweet_search.ph...', NULL)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(757): Slim\View->display('tweet_search.ph...')
+#5 /mnt/akahira/twitter_with_slim/index.php(502): Slim\Slim->render('tweet_search.ph...', Array)
+#6 [internal function]: {closure}()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#13 /mnt/akahira/twitter_with_slim/index.php(567): Slim\Slim->run()
+#14 {main}

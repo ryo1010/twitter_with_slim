@@ -1,46 +1,4 @@
-$(document).ready(function() {
-  $("#drug_image").on("drop",function(event){
-    event.preventDefault();
-    var files = event.originalEvent.dataTransfer.files;
-    for (var i = 0 ; i<files.length; i++) {
-      imagesDisplay(files[i]);
-      //imagesUpload(files[i]);
-    }
-  });
-
-  function imagesDisplay(file) {
-    var reader = new FileReader();
-    reader.onload = function() {
-      var img_src = $('<img>').attr('src',reader.result).attr('width', 100).attr("id", "images");
-      $('#drug_image').append(img_src);
-    }
-    reader.readAsDataURL(file);
-  }
-
-  function imagesUpload(file) {
-    var fd = new FormData();
-    fd.append('file',file);
-    var postData = {
-      method : "POST",
-      data : fd,
-      processData : false,
-      contentType : false
-    };
-    $.ajax(
-      "/tweet/images", postData
-      ).done(function( text ) {
-        console.log(text);
-      }).fail(function(){
-        alert("画像アップロードに失敗しました");
-      });
-  };
-
-
-  $("#drug_image").on("dragover",function(event){
-    event.preventDefault();
-  });
-
-
+$(function() {
   $('#send').click(function() {
       var postData = {
         method : "GET",
@@ -60,10 +18,8 @@ $(document).ready(function() {
   $('#output').on("click", "#tweet_submit", function() {
     try {
       var fd = new FormData();
-      //if ($('#drug_image').files!== null) {
-      //  fd.append( "file", $('#drug_image').files);
-      //}
-      var image_binary = $("#images").attr("src"); //バイナリデータ取得
+      //バイナリデータ取得
+      var image_binary = $("#images").attr("src");
       fd.append("images", image_binary);
       fd.append("tweet_content", $("#tweet_content").val());
         var postData = {
@@ -103,4 +59,23 @@ $(document).ready(function() {
       return false;
     }
   });
+
 });
+/*function imagesUpload(file) {
+  var fd = new FormData();
+  fd.append('file',file);
+  var postData = {
+    method : "POST",
+    data : fd,
+    processData : false,
+    contentType : false
+  };
+  $.ajax(
+    "/tweet/images", postData
+    ).done(function( text ) {
+      console.log(text);
+    }).fail(function(){
+      alert("画像アップロードに失敗しました");
+    });
+};
+*/
