@@ -38,9 +38,12 @@ class Search extends Tweet
                 }
 
                 $stmt->execute();
-
-            $search_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            return $search_rows;
+            if ($stmt->rowCount() > 0) {
+                $search_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                return $search_rows;
+            } else {
+                return false;
+            }
 
         } catch (PDOException $e) {
             return false;

@@ -476,9 +476,11 @@ $app->post('/tweet/search' , function () use ($app) {
 
     $result = $tweet_search
         ->tweetSearch($search_word);
+    if ($result !== false) {
+        $result = $tweet_time_diff
+            -> tweetTimeChenge($result);
+    }
 
-    $result = $tweet_time_diff
-        -> tweetTimeChenge($result);
 
     $app->render(
         'header.php',
