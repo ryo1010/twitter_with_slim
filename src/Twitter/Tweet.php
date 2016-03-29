@@ -180,6 +180,31 @@ class Tweet
         }
     }
 
+    public function imageInsert($image)
+    {
+        try {
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
+            $stmt = $link->prepare(
+                "INSERT INTO images_binary(tweet_id,image_blob,created_at)
+                 VALUES(?,?,now())"
+            );
+            $stmt->execute(
+                [
+                    $this->tweet_id,
+                    $image
+                ]
+            );
+            return true;
+
+        } catch (PDOException $e) {
+
+        } finally {
+            $link = null;
+            $stmt = null;
+        }
+    }
+
     public function tweetEditSelect(){
         try {
             $db = new \Twitter\Database();

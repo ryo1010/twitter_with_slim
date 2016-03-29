@@ -4,6 +4,24 @@ namespace Twitter;
 
 class Images extends Tweet
 {
+    public function imageDecode($image)
+    {
+        $image = preg_replace("/data:[^,]+,/i","",$image);
+        //デコード
+        $image = base64_decode($image);
+        //image作成
+        $image = imagecreatefromstring($image);
+
+        $file_name = uniqid("slim_twitter")."_image.png";
+        if ($image !== false) {
+            //image保存
+            imagepng($image, '/root/images/images/'.$file_name);
+            return $file_name;
+        }
+        else {
+            return false;
+        }
+    }
     public function imageUpload()
     {
         if (isset($_FILES["file"]) && is_uploaded_file($_FILES["file"]["tmp_name"])) {

@@ -192,3 +192,187 @@ Stack trace:
 #8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
 #9 /mnt/akahira/twitter_with_slim/index.php(566): Slim\Slim->run()
 #10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Empty string or invalid image' in /mnt/akahira/twitter_with_slim/index.php:116
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 116, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(116): imagecreatefromstring('\xBAw^~)\xDE')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(565): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:116
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 116, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(116): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(565): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:116
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 116, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(116): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(565): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:117
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 117, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(117): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(566): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:117
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 117, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(117): imagecreatefromstring('data:image/jpeg...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(566): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined index: file' in /mnt/akahira/twitter_with_slim/index.php:118
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(118): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 118, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(564): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: file' in /mnt/akahira/twitter_with_slim/index.php:118
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(118): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 118, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(564): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'imagepng() expects parameter 1 to be resource, string given' in /mnt/akahira/twitter_with_slim/index.php:116
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagepng() expe...', '/mnt/akahira/tw...', 116, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(116): imagepng('data:image/png;...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(561): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:116
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 116, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(116): imagecreatefromstring('data:image/png;...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(561): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagepng(.root/images/images/slim_twitter56fa120da73c5_imagepng): failed to open stream: No such file or directory' in /mnt/akahira/twitter_with_slim/src/Twitter/Images.php:18
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagepng(.root/...', '/mnt/akahira/tw...', 18, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/Images.php(18): imagepng(Resource id #34, '.root/images/im...')
+#2 /mnt/akahira/twitter_with_slim/index.php(116): Twitter\Images->imageDecode('data:image/png;...')
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(561): Slim\Slim->run()
+#11 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Empty string or invalid image' in /mnt/akahira/twitter_with_slim/src/Twitter/Images.php:13
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/Images.php(13): imagecreatefromstring('\xBAw^~)\xDE')
+#2 /mnt/akahira/twitter_with_slim/index.php(116): Twitter\Images->imageDecode('undefined')
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(561): Slim\Slim->run()
+#11 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Empty string or invalid image' in /mnt/akahira/twitter_with_slim/src/Twitter/Images.php:13
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/Images.php(13): imagecreatefromstring('\xBAw^~)\xDE')
+#2 /mnt/akahira/twitter_with_slim/index.php(116): Twitter\Images->imageDecode('undefined')
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(560): Slim\Slim->run()
+#11 {main}
+exception 'ErrorException' with message 'Undefined variable: tweet_rows_after' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:13
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(13): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(487): Twitter\TweetTimeDiff->tweetTimeChenge(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(560): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Empty string or invalid image' in /mnt/akahira/twitter_with_slim/src/Twitter/Images.php:13
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/Images.php(13): imagecreatefromstring('\xBAw^~)\xDE')
+#2 /mnt/akahira/twitter_with_slim/index.php(118): Twitter\Images->imageDecode('undefined')
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(567): Slim\Slim->run()
+#11 {main}
