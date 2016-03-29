@@ -64,7 +64,6 @@ $(document).ready(function() {
       //  fd.append( "file", $('#drug_image').files);
       //}
       var image_binary = $("#images").attr("src"); //バイナリデータ取得
-      //console.log(image_binary)
       fd.append("images", image_binary);
       fd.append("tweet_content", $("#tweet_content").val());
         var postData = {
@@ -79,22 +78,22 @@ $(document).ready(function() {
         ).done(function( text ){
           console.log(text);
           $("new_tweet").append(text);
-          // $('text.tweet_content').val("");
-          // tweetid = new FormData();
-          // tweetid.append("tweet_id", $("#last_tweet").val());
-          // var tweetDisplay = {
-          //   method : "POST",
-          //   dataType : "html",
-          //   data : tweetid,
-          //   processData : false,
-          //   contentType : false
-          // };
-          // $.ajax(
-          //   "/tweet/submit/after", tweetDisplay
-          // ).done(function( text ){
-          //   $('div.new_tweet').empty();
-          //   $("div.new_tweet").prepend(text);
-          // });
+          $('text.tweet_content').val("");
+          tweetid = new FormData();
+          tweetid.append("tweet_id", $("#last_tweet").val());
+          var tweetDisplay = {
+            method : "POST",
+            dataType : "html",
+            data : tweetid,
+            processData : false,
+            contentType : false
+          };
+          $.ajax(
+            "/tweet/submit/after", tweetDisplay
+          ).done(function( text ){
+            $('div.new_tweet').empty();
+            $("div.new_tweet").prepend(text);
+          });
         }).fail(function(){
           alert("投稿に失敗しました");
         });
