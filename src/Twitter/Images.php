@@ -22,7 +22,7 @@ class Images extends Tweet
             if (move_uploaded_file($_FILES["file"]["tmp_name"], "/root/images/images/" . $file_name)) {
                 $is_insert = $this->imageInsert($file_name);
                 if ($is_insert == true) {
-                    return true;
+                    return $file_name;
                 }
             } else {
                 return "can_not_upload";

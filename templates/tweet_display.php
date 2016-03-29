@@ -2,7 +2,6 @@
   <input id="send" value="つぶやく" type="button" />
   <div id="output"></div>
 </form>
-<div id="my-awesome-dropzone" class="dropzone"></div>
 <div id="image_drug_and_drop">
   <div id="drug_image">
   </div>

@@ -102,10 +102,6 @@ $app->post('/', function () use ($app) {
 $app->post('/tweet/images', function () use ($app){
     $tweet_submit = new \Twitter\Images();
     $image_uplode_message = $tweet_submit -> imageUpload();
-    $app->render(
-       'error.php',
-        ['error_info' => $image_uplode_message]
-    );
 });
 
 $app->post('/tweet/submit', function () use ($app){
@@ -116,7 +112,14 @@ $app->post('/tweet/submit', function () use ($app){
             ->setUserId($_SESSION['user_id'])
             ->setContent($tweet_content);
     $tweet_insert = $tweet_submit->tweetInsert();
-    $image_uplode_message = $tweet_submit -> imageUpload();
+    $data = $app->request->post('images');
+    $im = imagecreatefromstring(base64_decode($data));
+    if ($im !== false) {
+        header('Content-Type: image/png');
+        imagepng($im);
+        imagedestroy($im);
+    }
+    //$image_uplode_message = $tweet_submit -> imageUpload();
     /*
     switch ($image_uplode_message) {
         case true OR false:
@@ -523,6 +526,34 @@ $app->get('/tweet/select/:number' , function ($number) use ($app) {
             );
         }
 });
+
+// $app->post('/upload', function () use ($app) {
+//         if (isset($_FILES["file"]) && is_uploaded_file($_FILES["file"]["tmp_name"])) {
+//             if (!$check = array_search(
+//                 mime_content_type($_FILES['file']['tmp_name']),
+//                 array(
+//                     'gif' => 'image/gif',
+//                     'jpg' => 'image/jpeg',
+//                     'png' => 'image/png',
+//                 ),
+//                 true
+//                 )) {
+//                 return 'file_type_Fraud';
+//             }
+//             $file_name = uniqid("slim_twitter")."_".$_FILES["file"]["name"];
+//             if (move_uploaded_file($_FILES["file"]["tmp_name"], "/root/images/images/" . $file_name)) {
+//                 $is_insert = $this->imageInsert($file_name);
+//                 if ($is_insert == true) {
+//                     return true;
+//                 }
+//             } else {
+//                 return "can_not_upload";
+//             }
+//         } else {
+//             return "not_file";
+//         }
+
+// });
 
 $app->notFound(function () use ($app) {
     $app->render(

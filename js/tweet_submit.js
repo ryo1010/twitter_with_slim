@@ -1,18 +1,18 @@
 $(document).ready(function() {
-
   $("#drug_image").on("drop",function(event){
     event.preventDefault();
     var files = event.originalEvent.dataTransfer.files;
     for (var i = 0 ; i<files.length; i++) {
       imagesDisplay(files[i]);
-      imagesUpload(files[i]);
+      //imagesUpload(files[i]);
     }
   });
+
 
   function imagesDisplay(file) {
     var reader = new FileReader();
     reader.onload = function() {
-      var img_src = $('<img>').attr('src',reader.result).attr('width', 100).attr("id", "wawa");
+      var img_src = $('<img>').attr('src',reader.result).attr('width', 100).attr("id", "images");
       $('#drug_image').append(img_src);
     }
     reader.readAsDataURL(file);
@@ -32,7 +32,7 @@ $(document).ready(function() {
       ).done(function( text ) {
         console.log(text);
       }).fail(function(){
-
+        alert("画像アップロードに失敗しました");
       });
   };
 
@@ -61,9 +61,11 @@ $(document).ready(function() {
   $('#output').on("click", "#tweet_submit", function() {
     try {
       var fd = new FormData();
-      if ($('#drug_image').files[0]!== null) {
-        fd.append( "file", $('#drug_image').files[0]);
-      }
+      //if ($('#drug_image').files!== null) {
+      //  fd.append( "file", $('#drug_image').files);
+      //}
+      var image_binary = $("#images").attr("src"); //バイナリデータ取得
+      fd.append("images", image_binary);
       fd.append("tweet_content", $("#tweet_content").val());
         var postData = {
           method : "POST",
@@ -75,22 +77,23 @@ $(document).ready(function() {
         $.ajax(
           "/tweet/submit", postData
         ).done(function( text ){
-          $('text.tweet_content').val("");
-          tweetid = new FormData();
-          tweetid.append("tweet_id", $("#last_tweet").val());
-          var tweetDisplay = {
-            method : "POST",
-            dataType : "html",
-            data : tweetid,
-            processData : false,
-            contentType : false
-          };
-          $.ajax(
-            "/tweet/submit/after", tweetDisplay
-          ).done(function( text ){
-            $('div.new_tweet').empty();
-            $("div.new_tweet").prepend(text);
-          });
+          console.log(text);
+          // $('text.tweet_content').val("");
+          // tweetid = new FormData();
+          // tweetid.append("tweet_id", $("#last_tweet").val());
+          // var tweetDisplay = {
+          //   method : "POST",
+          //   dataType : "html",
+          //   data : tweetid,
+          //   processData : false,
+          //   contentType : false
+          // };
+          // $.ajax(
+          //   "/tweet/submit/after", tweetDisplay
+          // ).done(function( text ){
+          //   $('div.new_tweet').empty();
+          //   $("div.new_tweet").prepend(text);
+          // });
         }).fail(function(){
           alert("投稿に失敗しました");
         });
