@@ -11,8 +11,8 @@ class Images extends Tweet
         $image = base64_decode($image);
         //image作成
         $image = imagecreatefromstring($image);
-
-        $file_name = uniqid("slim_twitter")."_image.png";
+        $timestamp = microtime(true);
+        $file_name = md5($timestamp).".png";
         if ($image !== false) {
             //image保存
             imagepng($image, '/root/images/images/'.$file_name);
@@ -20,33 +20,6 @@ class Images extends Tweet
         }
         else {
             return false;
-        }
-    }
-    public function imageUpload()
-    {
-        if (isset($_FILES["file"]) && is_uploaded_file($_FILES["file"]["tmp_name"])) {
-            if (!$check = array_search(
-                mime_content_type($_FILES['file']['tmp_name']),
-                array(
-                    'gif' => 'image/gif',
-                    'jpg' => 'image/jpeg',
-                    'png' => 'image/png',
-                ),
-                true
-                )) {
-                return 'file_type_Fraud';
-            }
-            $file_name = uniqid("slim_twitter")."_".$_FILES["file"]["name"];
-            if (move_uploaded_file($_FILES["file"]["tmp_name"], "/root/images/images/" . $file_name)) {
-                $is_insert = $this->imageInsert($file_name);
-                if ($is_insert == true) {
-                    return $file_name;
-                }
-            } else {
-                return "can_not_upload";
-            }
-        } else {
-            return "not_file";
         }
     }
 
@@ -65,7 +38,6 @@ class Images extends Tweet
                     $file_name
                 ]
             );
-            echo $file_name;
             return true;
 
         } catch (PDOException $e) {

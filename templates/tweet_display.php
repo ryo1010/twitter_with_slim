@@ -1,5 +1,21 @@
 <form id="upload-form" method="post" enctype="multipart/form-data">
-  <input id="send" value="つぶやく" type="button" />
+<table>
+  <tr>
+  <td>
+    <textarea class="tweet" id="tweet_content" name="tweet_content" cols="40" rows="5"></textarea>
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <input type="file" name="upfile" id="upfile" size="30" multiple="multiple"/>
+  </td>
+  </tr>
+  <tr>
+  <td>
+     <input type="submit" id="tweet_submit" value="ツイート">
+  </td>
+  </tr>
+</table>
   <div id="output"></div>
 </form>
 <div id="image_drug_and_drop">
@@ -33,11 +49,17 @@
       </a>
     </div>
     <div class="image">
-      <? if($row['images_url'] !== null) : ?>
-      <a href="/images/<?=$row['images_url']?>" target="_new">
-        <img src="/images/<?=$row['images_url']?>" width="400">
-      </a>
-      <? endif;?>
+      <? if(isset($row['images_array'])) : ?>
+        <?foreach ($row['images_array'] as $image) { ?>
+          <a href="/images/<?=$image?>" target="_new">
+            <img src="/images/<?=$image?>" width="400">
+          </a>
+        <? } ?>
+      <? elseif(isset($row['images_url'])) : ?>
+          <a href="/images/<?= $row['images_url'] ?>" target="_new">
+            <img src="/images/<?= $row['images_url'] ?>" width="400">
+          </a>
+      <? endif; ?>
     </div>
     <div class='tweet_edit'>
       <? if ($row['user_id'] == $_SESSION['user_id']) { ?>

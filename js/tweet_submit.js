@@ -15,11 +15,16 @@ $(function() {
     return false;
   });
 
-  $('#output').on("click", "#tweet_submit", function() {
+  $('#tweet_submit').click(function() {
     try {
       var fd = new FormData();
       //バイナリデータ取得
+      var images = new Array();
+      $("[id=images]").each(function() {
+        images.push($(this).attr("src"));
+      });
       var image_binary = $("#images").attr("src");
+      fd.append("images_array", images);
       fd.append("images", image_binary);
       fd.append("tweet_content", $("#tweet_content").val());
         var postData = {

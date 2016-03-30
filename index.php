@@ -65,7 +65,10 @@ $app->get('/', function () use ($app) {
         );
     } else {
         $tweet_time_diff = new \Twitter\TweetTimeDiff();
+        $match = new \Twitter\HashTag();
         $tweet_rows = $tweet_time_diff -> tweetTimeChenge($tweet_rows);
+        $tweet_rows = $tweet_time_diff -> tweetImage($tweet_rows);
+        $match -> matchHashTag($tweet_rows);
         $app->render(
             'header.php',
             ['title' => \Twitter\Info::PAGETITLE['top_page']]
@@ -113,13 +116,20 @@ $app->post('/tweet/submit', function () use ($app){
             ->setContent($tweet_content);
     $tweet_insert = $tweet_submit->tweetInsert();
     $image = $app->request->post('images');
-    if (!empty($image)) {
-        $image = $app->request->post('images');
-        $file_name = $tweet_submit->imageDecode($image);
-        $image_uplode_message = $tweet_submit -> imageInsert($file_name);
-    } else {
-        $file_name = $tweet_submit->imageUpload();
-        $image_uplode_message = $tweet_submit->imageInsert($file_name);
+    $images_array = $app->request->post('images_array');
+    $count_flag = 0;
+    $images_array=explode(',',$images_array);
+    //print_r($images_array);
+    if (!empty($images_array)) {
+        foreach ($images_array as $image) {
+            if ($count_flag % 2 !== 0) {
+                echo $image;
+                $file_name
+                    = $tweet_submit->imageDecode($image);
+                $tweet_submit->imageInsert($file_name);
+            }
+            $count_flag++;
+        }
     }
 
     /*
@@ -422,6 +432,9 @@ $app->get('/user/:user_id', function ($user_id) use ($app) {
     $user_name = $detail->selectUserName();
     if ($detail->userFind()) {
         $tweet_rows = $detail->userDetail();
+        $image = new \Twitter\TweetTimeDiff();
+        $tweet_rows = $image->tweetImage($tweet_rows);
+
         if ( $tweet_rows !== false ) {
              $app->render(
                 'header.php',
@@ -480,18 +493,20 @@ $app->get('/user/refollow/:user_id' , function ($user_id) use ($app) {
     }
 });
 
-$app->post('/tweet/search' , function () use ($app) {
+$app->get('/tweet/search' , function () use ($app) {
     $tweet_search = new \Twitter\Search();
     $tweet_time_diff = new \Twitter\TweetTimeDiff();
 
     $search_word = $tweet_search
-        ->htmlEscape($app->request->post('tweet_search'));
+        ->htmlEscape($app->request->get('tweet_search'));
 
     $result = $tweet_search
         ->tweetSearch($search_word);
+    if ($result) {
+        $result = $tweet_time_diff
+            -> tweetTimeChenge($result);
+    }
 
-    $result = $tweet_time_diff
-        -> tweetTimeChenge($result);
 
     $app->render(
         'header.php',

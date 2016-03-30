@@ -7,7 +7,6 @@
   <tr>
   <td>
     <input type="file" name="upfile" id="upfile" size="30" />
-    <input type="hidden" id="filetest">
   </td>
   </tr>
   <tr>

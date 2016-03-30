@@ -279,3 +279,13 @@ CREATE TABLE `users` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_mail` (`user_mail`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `hash_tag` (
+  `tag_id` int(11) NOT NULL AUTO_INCREMENT,
+  `hash_tag` varchar(30) NOT NULL,
+  `tweet_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`tag_id`, `hash_tag`, `tweet_id`),
+  CONSTRAINT `hash_tag_ibfk_1` FOREIGN KEY (`tweet_id`) REFERENCES `tweets` (`tweet_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
