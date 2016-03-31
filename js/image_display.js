@@ -1,5 +1,6 @@
 $(function() {
   //type = file で選択されたとき
+  //複数選択しても画像表示は一枚しかできない・・・
   $('#upfile').change(function(event) {
     var file = $(this).prop('files')[0];
     imagesDisplay(file);

@@ -39,10 +39,12 @@ class Favorite extends Tweet
                 "SELECT
                 tweets.content,tweets.user_id,tweets.created_at,
                 favorites.tweet_id,
+                images.images_url,
                 users.user_name
                 FROM favorites
                 LEFT JOIN tweets ON favorites.tweet_id = tweets.tweet_id
                 LEFT JOIN users ON users.user_id = tweets.user_id
+                LEFT JOIN images ON images.tweet_id = tweets.tweet_id
                 WHERE favorites.user_id = ?
                 ORDER BY tweets.created_at DESC"
             )) {

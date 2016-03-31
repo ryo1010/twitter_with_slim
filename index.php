@@ -95,7 +95,6 @@ $app->post('/', function () use ($app) {
         $tweet_time_diff = new \Twitter\TweetTimeDiff();
         $tweet_rows = $tweet_time_diff->tweetTimeChenge($tweet_rows);
         $tweet_rows = $tweet_time_diff->tweetImage($tweet_rows);
-        $tweet_rows = $tweet_time_diff->tweetImage($tweet_rows);
 
         $match = new \Twitter\HashTag();
         $tweet_hash_rows = $match->displayHashTag($tweet_rows);
@@ -410,6 +409,12 @@ $app->get('/tweet/favorites', function () use ($app) {
     $favorite_rows = $favorites_history
         ->setUserId($_SESSION['user_id'])
         ->tweetFavoriteHistory();
+
+    $tweet_time_diff = new \Twitter\TweetTimeDiff();
+    $tweet_rows = $tweet_time_diff -> tweetTimeChenge($favorite_rows);
+    $tweet_rows = $tweet_time_diff -> tweetImage($tweet_rows);
+
+
     $app->render(
         'header.php',
         ['title' => \Twitter\Info::PAGETITLE['favorites_history_page']]
@@ -417,7 +422,7 @@ $app->get('/tweet/favorites', function () use ($app) {
 
     $app->render(
         'favorite_history.php',
-        ['rows'=>$favorite_rows]
+        ['rows'=>$tweet_rows]
     );
 });
 
@@ -517,8 +522,7 @@ $app->get('/tweet/search' , function () use ($app) {
     $result = $tweet_search
         ->tweetSearch($search_word);
     if ($result) {
-        $result = $tweet_time_diff
-            -> tweetTimeChenge($result);
+        $result = $tweet_time_diff->tweetImage($result);
     }
 
 
@@ -562,8 +566,11 @@ $app->get('/hashtag/:word' , function ($word) use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
             $app->redirect('/login');
         }
+    $images = new \Twitter\TweetTimeDiff();
     $select_hash_tag = new \Twitter\HashTag();
     $tweet_rows = $select_hash_tag->selectHashTag($word);
+    $tweet_rows = $images->tweetImage($tweet_rows);
+
     if ($tweet_rows) {
         $tweet_hash_rows = $select_hash_tag->displayHashTag($tweet_rows);
         $app->render(

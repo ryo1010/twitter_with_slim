@@ -908,3 +908,29 @@ Stack trace:
 #7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
 #8 /mnt/akahira/twitter_with_slim/index.php(620): Slim\Slim->run()
 #9 {main}
+exception 'ErrorException' with message 'Undefined index: images_url' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:26
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(26): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 26, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(416): Twitter\TweetTimeDiff->tweetImage(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(626): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined index: images_url' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:26
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(26): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 26, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(416): Twitter\TweetTimeDiff->tweetImage(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(626): Slim\Slim->run()
+#10 {main}
