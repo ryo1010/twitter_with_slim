@@ -516,23 +516,23 @@ $app->get('/tweet/search' , function () use ($app) {
 
     $result = $tweet_search
         ->tweetSearch($search_word);
-<<<<<<< HEAD
+
     if ($result !== false) {
-=======
-    if ($result) {
->>>>>>> Image_Drag_and_Drop
         $result = $tweet_time_diff
             -> tweetTimeChenge($result);
+        $app->render(
+            'header.php',
+            ['title' => \Twitter\Info::PAGETITLE['tweet_search']]
+        );
+        $app->render('tweet_search.php',
+            ['search_word' => $search_word,'rows' => $result]
+        );
+    } else {
+            $app->render(
+               'error.php',
+                ['error_info' => \Twitter\Info::ERRORINFO['can_not_fount_tweet']]
+            );
     }
-
-
-    $app->render(
-        'header.php',
-        ['title' => \Twitter\Info::PAGETITLE['tweet_search']]
-    );
-    $app->render('tweet_search.php',
-        ['search_word' => $search_word,'rows' => $result]
-    );
 });
 
 

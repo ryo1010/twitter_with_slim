@@ -4,7 +4,7 @@ namespace Twitter;
 
 class Info
 {
-    const PAGETITLE = array(
+    const PAGETITLE = [
         'top_page' => "ツイート一覧",
         'login_page' => "ログインページ",
         'user_pre_mail_page' => "仮登録画面",
@@ -18,8 +18,9 @@ class Info
         'favorites_history_page' => "お気に入り履歴",
         'retweets_history_page' => "リツイート履歴",
         'user_detail_page' => "さんのページ"
-    );
-    const ERRORINFO = array(
+    ];
+
+    const ERRORINFO = [
         'not_found_user' => "ユーザーが存在しません",
         'can_not_follow' => "フォローできませんでした",
         'can_not_favorite' => "お気に入りできませんでした",
@@ -33,8 +34,9 @@ class Info
         'not_found' => "ツイートがありません",
         'not_found_page' => "ページがありません",
         'not_fount_tweet' => "ツイートを選択できませんでした。",
+        'can_not_fount_tweet' => "検索結果がありません。",
         'can_not_uplode' => "画像をアップロードできませんでした",
         'file_type_Fraud' => "ファイル形式が不正です。",
         'not_found_hash_tag' => "該当するハッシュタグがありません"
-    );
+    ];
 }
