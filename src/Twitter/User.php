@@ -240,8 +240,12 @@ class User extends Database
         try {
             $link = $this->db_con;
             $stmt = $link->prepare(
-                "SELECT users.user_name,users.user_id,tweets.tweet_id,tweets.content,tweets.created_at FROM users
+                "SELECT users.user_name, users.user_id,
+                    tweets.tweet_id, tweets.content, tweets.created_at,
+                    images.images_url
+                FROM users
                 LEFT JOIN tweets ON users.user_id = tweets.user_id
+                LEFT JOIN images ON images.tweet_id = tweets.tweet_id
                 WHERE tweets.user_id = ? AND tweets.stutas = ?
                 ORDER BY tweets.created_at DESC"
             );

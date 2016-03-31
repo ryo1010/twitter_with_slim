@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
   $('#send').click(function() {
       var postData = {
         method : "GET",
@@ -15,12 +15,16 @@ $(document).ready(function() {
     return false;
   });
 
-  $('#output').on("click", "#tweet_submit", function() {
+  $('#tweet_submit').click(function() {
     try {
       var fd = new FormData();
-      if ($('#upfile')[0].files[0]!== null) {
-        fd.append( "file", $('#upfile')[0].files[0]);
-      }
+      var images = new Array();
+      $("[id=images]").each(function() {
+        images.push($(this).attr("src"));
+      });
+      var image_binary = $("#images").attr("src");
+      fd.append("images_array", images);
+      fd.append("images", image_binary);
       fd.append("tweet_content", $("#tweet_content").val());
         var postData = {
           method : "POST",
@@ -32,6 +36,7 @@ $(document).ready(function() {
         $.ajax(
           "/tweet/submit", postData
         ).done(function( text ){
+          $("new_tweet").append(text);
           $('text.tweet_content').val("");
           tweetid = new FormData();
           tweetid.append("tweet_id", $("#last_tweet").val());
@@ -57,4 +62,23 @@ $(document).ready(function() {
       return false;
     }
   });
+
 });
+/*function imagesUpload(file) {
+  var fd = new FormData();
+  fd.append('file',file);
+  var postData = {
+    method : "POST",
+    data : fd,
+    processData : false,
+    contentType : false
+  };
+  $.ajax(
+    "/tweet/images", postData
+    ).done(function( text ) {
+      console.log(text);
+    }).fail(function(){
+      alert("画像アップロードに失敗しました");
+    });
+};
+*/

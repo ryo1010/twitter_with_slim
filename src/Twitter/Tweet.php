@@ -49,6 +49,11 @@ class Tweet
         return $this;
     }
 
+    public function getTweetId()
+    {
+        return $this->tweet_id;
+    }
+
     public function tweetDisplay()
     {
         try {
@@ -78,6 +83,7 @@ class Tweet
                 ORDER BY tweets.created_at DESC, tweets.tweet_id DESC
                 LIMIT $this->display_number, $this->display_limit"
             );
+
             $stmt->execute(
                 [
                     $this->user_id,
@@ -86,12 +92,14 @@ class Tweet
                     self::INSERTED
                 ]
                 );
+
             if ($stmt->rowCount() > 0) {
                 $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
                return $tweet_rows;
             }  else {
                 return "not_found";
             }
+
         } catch (PDOException $e) {
             return false;
         } finally {
@@ -170,6 +178,31 @@ class Tweet
                 ]
             );
             $this->tweet_id = $link->lastInsertId('tweet_id');
+            return true;
+
+        } catch (PDOException $e) {
+
+        } finally {
+            $link = null;
+            $stmt = null;
+        }
+    }
+
+    public function imageInsert($image)
+    {
+        try {
+            $db = new \Twitter\Database();
+            $link = $db->db_con;
+            $stmt = $link->prepare(
+                "INSERT INTO images_binary(tweet_id,image_blob,created_at)
+                 VALUES(?,?,now())"
+            );
+            $stmt->execute(
+                [
+                    $this->tweet_id,
+                    $image
+                ]
+            );
             return true;
 
         } catch (PDOException $e) {

@@ -27,8 +27,6 @@
     <? endif; ?>
   <? } ?>
 
-  <!-- <a href="/user/following/<?= $tweet_rows[0]['user_id'] ?>">フォロー[]</a>
-  <a href="/user/follower/<?= $tweet_rows[0]['user_id'] ?>">フォロワー[]</a>-->
   <div class="main">
     <? foreach ($tweet_rows as $row) { ?>
       <div class='datetime_div'>
@@ -40,6 +38,19 @@
       <div class='content_div'>
         <?= $row['content'] ?>
       </div>
+          <div class="image">
+      <? if(isset($row['images_array'])) : ?>
+        <?foreach ($row['images_array'] as $image) { ?>
+          <a href="/images/<?=$image?>" target="_new">
+            <img src="/images/<?=$image?>" width="400">
+          </a>
+        <? } ?>
+      <? elseif(isset($row['images_url'])) : ?>
+          <a href="/images/<?= $row['images_url'] ?>" target="_new">
+            <img src="/images/<?= $row['images_url'] ?>" width="400">
+          </a>
+      <? endif; ?>
+    </div>
       <div class='tweet_edit'>
         <a href='/tweet/edit/<?= $row['tweet_id'] ?>'>編集</a>
         <a href='/favorite/<?= $row['tweet_id'] ?>'>お気に入り</a>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 exception 'ErrorException' with message 'PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /mnt/akahira/twitter_with_slim/src/Twitter/Search.php:40
 Stack trace:
 #0 [internal function]: Slim\Slim::handleErrors(2, 'PDOStatement::e...', '/mnt/akahira/tw...', 40, Array)
@@ -30,6 +31,11 @@ exception 'ErrorException' with message 'Undefined variable: tweet_rows_after' i
 Stack trace:
 #0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(13): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 13, Array)
 #1 /mnt/akahira/twitter_with_slim/index.php(481): Twitter\TweetTimeDiff->tweetTimeChenge(Array)
+=======
+exception 'ErrorException' with message 'move_uploaded_file(/mnt/akahira/twitter_with_slim/uploads/Chrysanthemum1.jpg): failed to open stream: No such file or directory' in /mnt/akahira/twitter_with_slim/index.php:536
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'move_uploaded_f...', '/mnt/akahira/tw...', 536, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): move_uploaded_file('/mnt/akahira/tw...', '/mnt/akahira/tw...')
 #2 [internal function]: {closure}()
 #3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
 #4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
@@ -37,12 +43,48 @@ Stack trace:
 #6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
 #7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
 #8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(548): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'move_uploaded_file(/mnt/akahira/twitter_with_slim/uploads/Chrysanthemum.jpg): failed to open stream: No such file or directory' in /mnt/akahira/twitter_with_slim/index.php:536
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'move_uploaded_f...', '/mnt/akahira/tw...', 536, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): move_uploaded_file('/mnt/akahira/tw...', '/mnt/akahira/tw...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(548): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(148): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+>>>>>>> Image_Drag_and_Drop
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+<<<<<<< HEAD
 #9 /mnt/akahira/twitter_with_slim/index.php(526): Slim\Slim->run()
 #10 {main}
 exception 'ErrorException' with message 'Undefined variable: tweet_rows_after' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:13
 Stack trace:
 #0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(13): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 13, Array)
 #1 /mnt/akahira/twitter_with_slim/index.php(481): Twitter\TweetTimeDiff->tweetTimeChenge(Array)
+=======
+#9 /mnt/akahira/twitter_with_slim/index.php(560): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:118
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 118, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(118): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+>>>>>>> Image_Drag_and_Drop
 #2 [internal function]: {closure}()
 #3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
 #4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
@@ -50,12 +92,21 @@ Stack trace:
 #6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
 #7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
 #8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+<<<<<<< HEAD
 #9 /mnt/akahira/twitter_with_slim/index.php(526): Slim\Slim->run()
 #10 {main}
 exception 'ErrorException' with message 'Undefined variable: tweet_rows_after' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:13
 Stack trace:
 #0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(13): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 13, Array)
 #1 /mnt/akahira/twitter_with_slim/index.php(481): Twitter\TweetTimeDiff->tweetTimeChenge(Array)
+=======
+#9 /mnt/akahira/twitter_with_slim/index.php(567): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:118
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 118, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(118): imagecreatefromstring('data:image/jpeg...')
+>>>>>>> Image_Drag_and_Drop
 #2 [internal function]: {closure}()
 #3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
 #4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
@@ -63,12 +114,21 @@ Stack trace:
 #6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
 #7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
 #8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+<<<<<<< HEAD
 #9 /mnt/akahira/twitter_with_slim/index.php(526): Slim\Slim->run()
 #10 {main}
 exception 'ErrorException' with message 'Undefined variable: tweet_rows_after' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:13
 Stack trace:
 #0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(13): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 13, Array)
 #1 /mnt/akahira/twitter_with_slim/index.php(481): Twitter\TweetTimeDiff->tweetTimeChenge(Array)
+=======
+#9 /mnt/akahira/twitter_with_slim/index.php(567): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:117
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 117, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(117): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+>>>>>>> Image_Drag_and_Drop
 #2 [internal function]: {closure}()
 #3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
 #4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
@@ -76,12 +136,21 @@ Stack trace:
 #6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
 #7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
 #8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+<<<<<<< HEAD
 #9 /mnt/akahira/twitter_with_slim/index.php(526): Slim\Slim->run()
 #10 {main}
 exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
 Stack trace:
 #0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
 #1 /mnt/akahira/twitter_with_slim/index.php(481): Twitter\TweetTimeDiff->tweetTimeChenge(false)
+=======
+#9 /mnt/akahira/twitter_with_slim/index.php(566): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:118
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 118, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(118): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+>>>>>>> Image_Drag_and_Drop
 #2 [internal function]: {closure}()
 #3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
 #4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
@@ -89,6 +158,7 @@ Stack trace:
 #6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
 #7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
 #8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+<<<<<<< HEAD
 #9 /mnt/akahira/twitter_with_slim/index.php(526): Slim\Slim->run()
 #10 {main}
 exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/templates/tweet_search.php:13
@@ -128,11 +198,309 @@ Stack trace:
 exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/templates/tweet_search.php:13
 Stack trace:
 #0 /mnt/akahira/twitter_with_slim/templates/tweet_search.php(13): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 13, Array)
+=======
+#9 /mnt/akahira/twitter_with_slim/index.php(567): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:119
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 119, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(119): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(568): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:120
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 120, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(120): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(569): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4Qi0RXhpZgAATU0AKgAAAAgABQEyAAIAAAAUAAAASgE7AAIAAAAHAAAAXkdGAAMAAAABAAQAAEdJAAMAAAABAD8AAIdpAAQAAAABAAAAZgAAAMYyMDA5OjAzOjEyIDEzOjQ2OjQyAENvcmJpcwAAAASQAwACAAAAFAAAAJyQBAACAAAAFAAAALCSkQACAAAAAzU0AACSkgACAAAAAzU0AAAAAAAAMjAwODowMzoxNCAxMzo1OToyNgAyMDA4OjAzOjE0IDEzOjU5OjI2AAAAAAYBAwADAAAAAQAGAAABGgAFAAAAAQAAARQBGwAFAAAAAQAAARwBKAADAAAAAQACAAACAQAEAAAAAQAAASQCAgAEAAAAAQAAB4gAAAAAAAAAYAAAAAEAAABgAAAAAf/Y/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8AAEQgALwA+AwEhAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8Agiu3jknuViG0ThZJAMrt2DAB/I/jUEildZt7kf8AHnGDujHAU/T3OK+MT5d+34n6dGOt0zO+0TW/iKS4s0llSbDKiLktjrwPTBq/NdW01lNaoXGwEsWP3gMZGfTHFazi7qS8jRxbaZJqNut3NZafaxJlG3KqfKFAGM8dOSKrXNk9peEXVtb3jOUCM0oRUIJLgk+wHzds+9FGpoot67/iYfClFb7mVA4l1YWVrc2kavJmOXa7BnDZwzHAP+97VUuJ084wm8ihmUnzTsIVW7hCuQQeuTzwM9MDs5Xfa5KqWdtvvNhtSEVpbIYma0tthZEBz52GAQnvxyfTA9hVa+1kzwuqBELKGUKCOvb6/wCfaudUeazOiEUpFO21dtOvfMhb5COWY+oUt+ZFVWu2EjSRyFXJbnJ6HoAfX/8AVXTGkk+buV7RN3W5u6BeSI1vHbEG6uJfLbd2QDJOfbrVp7SKa2mvby8dblZzFCsTABTnBOevTJPI4rllFwnz2u2Z1Lc2i10+4zTfQ/YodOsfKvJHZnzMgwyt2x6k9BnI4+lLNqEKafDpW9BJCd5e4iYBBj7gI5I5zz/+rfklzfj/AMMZxs1e4+UtbafNeG3kuVnjABcBY4i4zlcHk/MfcE885rEu9Ra6bzhDMDAhIJkGQTgAkhR+vPvV0YJ+8KcmlpqihmWTe4w5BOckZz9emOPXPPfmmeayqRkEE5GSOAeMdeD3rs5FY43Wnza/1+JqaVeSW6vNERtHGTxnJGVH+e1a8l3BeoyamT9mhb/VQ5XkZ6+3vXBWg+fmjueklGdO5m4tNT1K1tLC3+z24YkkMSxzgZJPp+ma3rmDTbGfy9Xkka52gZdSxceoPpU1HUuqafvGUZKN7bmMtxNPeNpdorvHuICOR2G35cE9s55568VlXFuIzKJVKfL+73rnOGAOexAGTnHaummuV26sirLmhqVpFeS2WKNiDjJbcWBOP8jHtSgn7MEdQ3HIPG7g8njt7mupv3bHHCL5nLpYu2HmSeVHBhEIDJuHCkZyzN6DJP5Vt2WnrcrCLd8RtEHudjZJOT1J/MivPxE+S7/r+rnpUX7ibNe61fTbKaOIRrN5S8SoFyp/u57/AIflXOahcJqV80o89JANqrLG2RH24/GscPSnH32Z3s1zbsSPS9TsbmC4kgSF1OVZn4UjnJ+g5qLUbK9mklllRpIYUXzGC7fl6cD8On8q6I1afNdMqcOeNzMH2lnyuZ5CWyw+csS27JU/U5+tMlhuNv8ApFu0SugwGbrzwenTv+X49ace5w8tS3JbTv8A1+XQ14Ila7SCW48qBE/egNuTAOcfKP8AHtWvBdzXNg1laQrBCG2zKF+coenOfTGf544rgq2er2Wv9fgenyq1un9aE/2XRYz9neNbe6XjzBgkZGQcHOfcH/Csa61TX7W8NpNGsoVd0ZjiyGU/xDrxRQSqfxd+hyVpVItctmjau4yNKGp3UjyXkqFo1YlgAR2BJAHt/wDqqtLfQWafZElkktZ4QCyj5t20AkbuMe3GM8d6ygnPRbf5HRHVbFaz0+G7v7RoZJEg34MsoBcH1AGR1+tOn8OfZ7W6nFyWSMgLnOXUuFGfpyK1ddxfLb+ridub3kE0dyJb9YYUX5AE8w5PlBQMemcCrEdjY6naG7gupzdhwJgw2sp49PlI9v5VPNyrmjr3KnJq1zKvrRLczqC1veRncxiY7ZQSBuB6g5PQ1VtFEcsgvWnZm53I2SSPXJrp5m4adTGEE583Y//Z/+wAEUR1Y2t5AAEABAAAAGQAAP/hEBRodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+DQo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA0LjItYzAyMCAxLjEyNDA3OCwgVHVlIFNlcCAxMSAyMDA3IDIzOjIxOjQwICAgICAgICAiPg0KCTxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+DQoJCTxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhhcFJpZ2h0cz0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3JpZ2h0cy8iIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIiB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIgeG1sbnM6Y3JzPSJodHRwOi8vbnMuYWRvYmUuY29tL2NhbWVyYS1yYXctc2V0dGluZ3MvMS4wLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4YXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOk1pY3Jvc29mdFBob3RvXzFfPSJodHRwOi8vbnMubWljcm9zb2Z0LmNvbS9waG90by8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhhcFJpZ2h0czpNYXJrZWQ9IlRydWUiIHhhcFJpZ2h0czpXZWJTdGF0ZW1lbnQ9Imh0dHA6Ly9wcm8uY29yYmlzLmNvbS9zZWFyY2gvc2VhcmNocmVzdWx0cy5hc3A/dHh0PTQyLTE3MTY3MjIyJmFtcDtvcGVuSW1hZ2U9NDItMTcxNjcyMjIiIGV4aWY6RXhpZlZlcnNpb249IjAyMjEiIGV4aWY6UGl4ZWxYRGltZW5zaW9uPSIxMDI0IiBleGlmOlBpeGVsWURpbWVuc2lvbj0iNzY4IiBleGlmOkNvbG9yU3BhY2U9IjY1NTM1IiBleGlmOkRhdGVUaW1lRGlnaXRpemVkPSIyMDA4LTAzLTE0VDExOjMxOjQ4Ljk4LTA3OjAwIiB0aWZmOk9yaWVudGF0aW9uPSIxIiB0aWZmOkltYWdlV2lkdGg9IjEwMjQiIHRpZmY6SW1hZ2VMZW5ndGg9Ijc2OCIgdGlmZjpQaG90b21ldHJpY0ludGVycHJldGF0aW9uPSIyIiB0aWZmOlNhbXBsZXNQZXJQaXhlbD0iMyIgdGlmZjpYUmVzb2x1dGlvbj0iOTYvMSIgdGlmZjpZUmVzb2x1dGlvbj0iOTYvMSIgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIgY3JzOkFscmVhZHlBcHBsaWVkPSJUcnVlIiBwaG90b3Nob3A6TGVnYWN5SVBUQ0RpZ2VzdD0iNTdGRTdCNjY4NEIxRjU4REMxMzVDODBDMUUyRjE2N0EiIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSIiIHhhcDpNZXRhZGF0YURhdGU9IjIwMDktMDItMDJUMTE6NDQ6MTAtMDg6MDAiIHhhcDpSYXRpbmc9IjQiIHhhcDpDcmVhdGVEYXRlPSIyMDA4LTAzLTE0VDIwOjU5OjI2LjUzNVoiIHhhcDpNb2RpZnlEYXRlPSIyMDA4LTAzLTE0VDExOjMxOjQ4Ljk4LTA3OjAwIiBNaWNyb3NvZnRQaG90b18xXzpSYXRpbmc9IjYzIj4NCgkJCTx0aWZmOkJpdHNQZXJTYW1wbGU+DQoJCQkJPHJkZjpTZXE+DQoJCQkJCTxyZGY6bGk+ODwvcmRmOmxpPg0KCQkJCQk8cmRmOmxpPjg8L3JkZjpsaT4NCgkJCQkJPHJkZjpsaT44PC9yZGY6bGk+DQoJCQkJPC9yZGY6U2VxPg0KCQkJPC90aWZmOkJpdHNQZXJTYW1wbGU+DQoJCQk8ZGM6cmlnaHRzPg0KCQkJCTxyZGY6QWx0Pg0KCQkJCQk8cmRmOmxpIHhtbDpsYW5nPSJ4LWRlZmF1bHQiPsKpIENvcmJpcy4gIEFsbCBSaWdodHMgUmVzZXJ2ZWQuPC9yZGY6bGk+DQoJCQkJPC9yZGY6QWx0Pg0KCQkJPC9kYzpyaWdodHM+DQoJCQk8ZGM6Y3JlYXRvcj4NCgkJCQk8cmRmOlNlcT4NCgkJCQkJPHJkZjpsaT5Db3JiaXM8L3JkZjpsaT4NCgkJCQk8L3JkZjpTZXE+DQoJCQk8L2RjOmNyZWF0b3I+DQoJCTwvcmRmOkRlc2NyaXB0aW9uPg0KCTwvcmRmOlJERj4NCjwveDp4bXBtZXRhPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg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' in /mnt/akahira/twitter_with_slim/index.php:117
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(117): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 117, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(571): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:122
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 122, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(122): imagecreatefromstring('data:image/jpeg...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(571): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:120
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 120, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(120): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(569): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:120
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 120, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(120): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(569): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:120
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 120, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(120): imagecreatefromstring('u\xABZ\x8Af\xA0{\xFAg\x81\xB6\xAC{\xAE"...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(569): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:117
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 117, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(117): imagecreatefromstring('u\xABZ\x8Af\xA0{\xFAg\x81\xB6\xAC{\xAE"...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(566): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Empty string or invalid image' in /mnt/akahira/twitter_with_slim/index.php:116
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 116, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(116): imagecreatefromstring('\xBAw^~)\xDE')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(565): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:116
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 116, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(116): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(565): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:116
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 116, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(116): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(565): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:117
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 117, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(117): imagecreatefromstring('u\xABZ\x8Af\xA0{\xF8\xE9z\x06\xDA\xB1\xEE\xB8...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(566): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:117
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 117, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(117): imagecreatefromstring('data:image/jpeg...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(566): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined index: file' in /mnt/akahira/twitter_with_slim/index.php:118
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(118): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 118, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(564): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: file' in /mnt/akahira/twitter_with_slim/index.php:118
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(118): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 118, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(564): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'imagepng() expects parameter 1 to be resource, string given' in /mnt/akahira/twitter_with_slim/index.php:116
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagepng() expe...', '/mnt/akahira/tw...', 116, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(116): imagepng('data:image/png;...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(561): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Data is not in a recognized format' in /mnt/akahira/twitter_with_slim/index.php:116
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 116, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(116): imagecreatefromstring('data:image/png;...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(561): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagepng(.root/images/images/slim_twitter56fa120da73c5_imagepng): failed to open stream: No such file or directory' in /mnt/akahira/twitter_with_slim/src/Twitter/Images.php:18
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagepng(.root/...', '/mnt/akahira/tw...', 18, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/Images.php(18): imagepng(Resource id #34, '.root/images/im...')
+#2 /mnt/akahira/twitter_with_slim/index.php(116): Twitter\Images->imageDecode('data:image/png;...')
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(561): Slim\Slim->run()
+#11 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Empty string or invalid image' in /mnt/akahira/twitter_with_slim/src/Twitter/Images.php:13
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/Images.php(13): imagecreatefromstring('\xBAw^~)\xDE')
+#2 /mnt/akahira/twitter_with_slim/index.php(116): Twitter\Images->imageDecode('undefined')
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(561): Slim\Slim->run()
+#11 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Empty string or invalid image' in /mnt/akahira/twitter_with_slim/src/Twitter/Images.php:13
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/Images.php(13): imagecreatefromstring('\xBAw^~)\xDE')
+#2 /mnt/akahira/twitter_with_slim/index.php(116): Twitter\Images->imageDecode('undefined')
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(560): Slim\Slim->run()
+#11 {main}
+exception 'ErrorException' with message 'Undefined variable: tweet_rows_after' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:13
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(13): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(487): Twitter\TweetTimeDiff->tweetTimeChenge(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(560): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'imagecreatefromstring(): Empty string or invalid image' in /mnt/akahira/twitter_with_slim/src/Twitter/Images.php:13
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'imagecreatefrom...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/Images.php(13): imagecreatefromstring('\xBAw^~)\xDE')
+#2 /mnt/akahira/twitter_with_slim/index.php(118): Twitter\Images->imageDecode('undefined')
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(567): Slim\Slim->run()
+#11 {main}
+exception 'ErrorException' with message 'Undefined index: user_name' in /mnt/akahira/twitter_with_slim/templates/tweet_search.php:1
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/templates/tweet_search.php(1): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 1, Array)
+>>>>>>> Image_Drag_and_Drop
 #1 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(278): require('/mnt/akahira/tw...')
 #2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(255): Slim\View->render('tweet_search.ph...', NULL)
 #3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(243): Slim\View->fetch('tweet_search.ph...', NULL)
 #4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(757): Slim\View->display('tweet_search.ph...')
+<<<<<<< HEAD
 #5 /mnt/akahira/twitter_with_slim/index.php(491): Slim\Slim->render('tweet_search.ph...', Array)
+=======
+#5 /mnt/akahira/twitter_with_slim/index.php(502): Slim\Slim->render('tweet_search.ph...', Array)
+>>>>>>> Image_Drag_and_Drop
 #6 [internal function]: {closure}()
 #7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
 #8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
@@ -140,5 +508,9 @@ Stack trace:
 #10 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
 #11 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
 #12 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+<<<<<<< HEAD
 #13 /mnt/akahira/twitter_with_slim/index.php(528): Slim\Slim->run()
+=======
+#13 /mnt/akahira/twitter_with_slim/index.php(567): Slim\Slim->run()
+>>>>>>> Image_Drag_and_Drop
 #14 {main}

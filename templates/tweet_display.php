@@ -1,7 +1,3 @@
-<form id="upload-form" method="post" enctype="multipart/form-data">
-  <input id="send" value="つぶやく" type="button" />
-  <div id="output"></div>
-</form>
 <div class='username_div'>ユーザ名<?= $_SESSION['user_name'] ?></div>
 <a href="/tweet/favorites">お気に入り履歴</a>
 <form action="user/logout" method="POST">
@@ -28,11 +24,17 @@
       </a>
     </div>
     <div class="image">
-      <? if($row['images_url'] !== null) : ?>
-      <a href="/images/<?=$row['images_url']?>" target="_new">
-        <img src="/images/<?=$row['images_url']?>" width="400">
-      </a>
-      <? endif;?>
+      <? if(isset($row['images_array'])) : ?>
+        <?foreach ($row['images_array'] as $image) { ?>
+          <a href="/images/<?=$image?>" target="_new">
+            <img src="/images/<?=$image?>" width="400">
+          </a>
+        <? } ?>
+      <? elseif(isset($row['images_url'])) : ?>
+          <a href="/images/<?= $row['images_url'] ?>" target="_new">
+            <img src="/images/<?= $row['images_url'] ?>" width="400">
+          </a>
+      <? endif; ?>
     </div>
     <div class='tweet_edit'>
       <? if ($row['user_id'] == $_SESSION['user_id']) { ?>

@@ -1,0 +1,910 @@
+exception 'ErrorException' with message 'Array to string conversion' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:13
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(13): Slim\Slim::handleErrors(8, 'Array to string...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(65): Twitter\HashTag->tagPresence()
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(576): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'preg_match_all() expects parameter 2 to be string, array given' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:12
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'preg_match_all(...', '/mnt/akahira/tw...', 12, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(12): preg_match_all('/[\\s][#\xEF\xBC\x83][\xEF\xBC\xA1...', Array, NULL)
+#2 /mnt/akahira/twitter_with_slim/index.php(64): Twitter\HashTag->matchHashTag(Array)
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#11 {main}
+exception 'ErrorException' with message 'Array to string conversion' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:12
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(12): Slim\Slim::handleErrors(8, 'Array to string...', '/mnt/akahira/tw...', 12, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(64): Twitter\HashTag->matchHashTag(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: match' in /mnt/akahira/twitter_with_slim/index.php:131
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(131): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 131, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined variable: match' in /mnt/akahira/twitter_with_slim/index.php:131
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(131): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 131, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Array to string conversion' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:13
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(13): Slim\Slim::handleErrors(8, 'Array to string...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(130): Twitter\HashTag->matchHashTag('\xE3\x82\x8F\xE3\x82\x8F #\xE3\x83\x86\xE3\x82\xB9\xE3...')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(163): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:19
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(19): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 19, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(131): Twitter\HashTag->hashTagInsert(NULL)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: t' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:49
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(49): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 49, Array)
+#1 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(20): Twitter\HashTag->tweetHashTag(Array)
+#2 /mnt/akahira/twitter_with_slim/index.php(131): Twitter\HashTag->hashTagInsert(Array)
+#3 [internal function]: {closure}()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#10 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#11 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: count' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:44
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(44): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 44, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(131): Twitter\HashTag->hashTagInsert(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php:9
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/TweetTimeDiff.php(9): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 9, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(162): Twitter\TweetTimeDiff->tweetTimeChenge('not_found')
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: stmt' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:48
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(48): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 48, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(131): Twitter\HashTag->hashTagInsert(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: stmt' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:48
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(48): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 48, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(131): Twitter\HashTag->hashTagInsert(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: stmt' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:49
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(49): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 49, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(131): Twitter\HashTag->hashTagInsert(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Missing argument 1 for Twitter\Tweet::getTweetId(), called in /mnt/akahira/twitter_with_slim/index.php on line 128 and defined' in /mnt/akahira/twitter_with_slim/src/Twitter/Tweet.php:52
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/Tweet.php(52): Slim\Slim::handleErrors(2, 'Missing argumen...', '/mnt/akahira/tw...', 52, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(128): Twitter\Tweet->getTweetId()
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(579): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: match' in /mnt/akahira/twitter_with_slim/index.php:63
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(63): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 63, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(578): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined variable: match' in /mnt/akahira/twitter_with_slim/index.php:65
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(65): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 65, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined variable: テキスト　#ラーメン　#山岡家' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:11
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(11): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 11, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(65): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: content' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:12
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(12): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 12, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(65): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: content' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:13
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(13): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(65): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Use of undefined constant u - assumed 'u'' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:12
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(12): Slim\Slim::handleErrors(8, 'Use of undefine...', '/mnt/akahira/tw...', 12, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(65): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Array to string conversion' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:14
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(14): Slim\Slim::handleErrors(8, 'Array to string...', '/mnt/akahira/tw...', 14, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(65): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Array to string conversion' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:14
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(14): Slim\Slim::handleErrors(8, 'Array to string...', '/mnt/akahira/tw...', 14, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(65): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: text' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:20
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(20): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 20, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(65): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(580): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: match' in /mnt/akahira/twitter_with_slim/index.php:551
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(551): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 551, Array)
+#1 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(590): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined variable: match' in /mnt/akahira/twitter_with_slim/index.php:551
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(551): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 551, Array)
+#1 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(590): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined index: user_id' in /mnt/akahira/twitter_with_slim/templates/tweet_select.php:5
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/templates/tweet_select.php(5): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 5, Array)
+#1 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(278): require('/mnt/akahira/tw...')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(255): Slim\View->render('tweet_select.ph...', NULL)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(243): Slim\View->fetch('tweet_select.ph...', NULL)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(757): Slim\View->display('tweet_select.ph...')
+#5 /mnt/akahira/twitter_with_slim/index.php(559): Slim\Slim->render('tweet_select.ph...', Array)
+#6 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#13 /mnt/akahira/twitter_with_slim/index.php(597): Slim\Slim->run()
+#14 {main}
+exception 'ErrorException' with message 'Undefined index: user_id' in /mnt/akahira/twitter_with_slim/templates/tweet_select.php:5
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/templates/tweet_select.php(5): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 5, Array)
+#1 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(278): require('/mnt/akahira/tw...')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(255): Slim\View->render('tweet_select.ph...', NULL)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(243): Slim\View->fetch('tweet_select.ph...', NULL)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(757): Slim\View->display('tweet_select.ph...')
+#5 /mnt/akahira/twitter_with_slim/index.php(559): Slim\Slim->render('tweet_select.ph...', Array)
+#6 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#13 /mnt/akahira/twitter_with_slim/index.php(597): Slim\Slim->run()
+#14 {main}
+exception 'ErrorException' with message 'Undefined variable: search_word' in /mnt/akahira/twitter_with_slim/templates/search_hashtag.php:11
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/templates/search_hashtag.php(11): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 11, Array)
+#1 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(278): require('/mnt/akahira/tw...')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(255): Slim\View->render('search_hashtag....', NULL)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(243): Slim\View->fetch('search_hashtag....', NULL)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(757): Slim\View->display('search_hashtag....')
+#5 /mnt/akahira/twitter_with_slim/index.php(559): Slim\Slim->render('search_hashtag....', Array)
+#6 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#13 /mnt/akahira/twitter_with_slim/index.php(597): Slim\Slim->run()
+#14 {main}
+exception 'ErrorException' with message 'Undefined index: images_url' in /mnt/akahira/twitter_with_slim/templates/search_hashtag.php:27
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/templates/search_hashtag.php(27): Slim\Slim::handleErrors(8, 'Undefined index...', '/mnt/akahira/tw...', 27, Array)
+#1 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(278): require('/mnt/akahira/tw...')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(255): Slim\View->render('search_hashtag....', NULL)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(243): Slim\View->fetch('search_hashtag....', NULL)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(757): Slim\View->display('search_hashtag....')
+#5 /mnt/akahira/twitter_with_slim/index.php(559): Slim\Slim->render('search_hashtag....', Array)
+#6 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#13 /mnt/akahira/twitter_with_slim/index.php(597): Slim\Slim->run()
+#14 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:49
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(49): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 49, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(551): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(597): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:49
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(49): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 49, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(551): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(597): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:49
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(49): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 49, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(551): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(597): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: tweet_hash_rows' in /mnt/akahira/twitter_with_slim/index.php:559
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(559): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 559, Array)
+#1 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(598): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/templates/search_hashtag.php:13
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/templates/search_hashtag.php(13): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 13, Array)
+#1 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(278): require('/mnt/akahira/tw...')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(255): Slim\View->render('search_hashtag....', NULL)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/View.php(243): Slim\View->fetch('search_hashtag....', NULL)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(757): Slim\View->display('search_hashtag....')
+#5 /mnt/akahira/twitter_with_slim/index.php(560): Slim\Slim->render('search_hashtag....', Array)
+#6 [internal function]: {closure}('\xE3\x81\xA8\xE3\x82\x93\xE3\x81\x93\xE3\x81\xA4')
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#9 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#10 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#13 /mnt/akahira/twitter_with_slim/index.php(598): Slim\Slim->run()
+#14 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:85
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(85): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 85, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(132): Twitter\HashTag->hashTagInsert(NULL)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(597): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:85
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(85): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 85, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(132): Twitter\HashTag->hashTagInsert(NULL)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(597): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x81\x93\xE3\x81\xA3\xE3\x81\xA6\xE3\x82\x8A')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(582): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x81\x93\xE3\x81\xA3\xE3\x81\xA6\xE3\x82\x8A')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(582): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x81\x93\xE3\x81\xA3\xE3\x81\xA6\xE3\x82\x8A')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(582): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x81\x93\xE3\x81\xA3\xE3\x81\xA6\xE3\x82\x8A\xE3\x81\x95...')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(582): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xEF\xBC\x83\xE3\x83\xA9\xE3\x83\xBC\xE3\x83\xA1\xE3\x83\xB3')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(582): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x80\x80\xE3\x81\x95\xE3\x81\xA3\xE3\x81\xB1\xE3\x82\x8A')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(582): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x80\x80\xE3\x81\x93\xE3\x81\xA3\xE3\x81\xA6\xE3\x82\x8A')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(582): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x80\x80\xEF\xBC\x83\xE3\x83\xA9\xE3\x83\xBC\xE3\x83\xA1...')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(582): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x80\x80\xE3\x81\x93\xE3\x81\xA3\xE3\x81\xA6\xE3\x82\x8A')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(582): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(536): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('\xE3\x80\x80\xE3\x83\x8F\xE3\x83\x83\xE3\x82\xB7\xE3\x83\xA5...')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(582): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:50
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(50): Slim\Slim::handleErrors(2, 'Invalid argumen...', '/mnt/akahira/tw...', 50, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(551): Twitter\HashTag->displayHashTag(false)
+#2 [internal function]: {closure}('test')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(597): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: tweet_hash_rows' in /mnt/akahira/twitter_with_slim/index.php:560
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(560): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 560, Array)
+#1 [internal function]: {closure}('test')
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(599): Slim\Slim->run()
+#9 {main}
+exception 'ErrorException' with message 'Undefined variable: tag_array' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:95
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(95): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 95, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(140): Twitter\HashTag->hashTagInsert(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(604): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: replace_content' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:58
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(58): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 58, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(559): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}('\xE5\xB1\xB1\xE5\xB2\xA1\xE5\xAE\xB6')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(611): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: replace_content' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:59
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(59): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 59, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(559): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}('\xE5\xB1\xB1\xE5\xB2\xA1\xE5\xAE\xB6')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(611): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: image' in /mnt/akahira/twitter_with_slim/index.php:97
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(97): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 97, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(620): Slim\Slim->run()
+#9 {main}
