@@ -1,3 +1,4 @@
+<form id="upload-form" method="post" enctype="multipart/form-data">
 <table>
   <tr>
   <td>
@@ -6,7 +7,7 @@
   </tr>
   <tr>
   <td>
-    <input type="file" name="upfile" id="upfile" size="30" />
+    <input type="file" name="upfile" id="upfile" size="30" multiple="multiple"/>
   </td>
   </tr>
   <tr>
@@ -15,6 +16,9 @@
   </td>
   </tr>
 </table>
-
-</body>
-</html>
+  <div id="output"></div>
+</form>
+<div id="image_drug_and_drop">
+  <div id="drug_image">
+  </div>
+</div>

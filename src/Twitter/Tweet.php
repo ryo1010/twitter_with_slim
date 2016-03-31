@@ -49,6 +49,11 @@ class Tweet
         return $this;
     }
 
+    public function getTweetId()
+    {
+        return $this->tweet_id;
+    }
+
     public function tweetDisplay()
     {
         try {
@@ -78,6 +83,7 @@ class Tweet
                 ORDER BY tweets.created_at DESC, tweets.tweet_id DESC
                 LIMIT $this->display_number, $this->display_limit"
             );
+
             $stmt->execute(
                 [
                     $this->user_id,
@@ -86,12 +92,14 @@ class Tweet
                     self::INSERTED
                 ]
                 );
+
             if ($stmt->rowCount() > 0) {
                 $tweet_rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
                return $tweet_rows;
             }  else {
                 return "not_found";
             }
+
         } catch (PDOException $e) {
             return false;
         } finally {

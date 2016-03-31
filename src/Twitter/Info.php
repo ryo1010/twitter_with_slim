@@ -34,7 +34,8 @@ class Info
         'not_found_page' => "ページがありません",
         'not_fount_tweet' => "ツイートを選択できませんでした。",
         'can_not_uplode' => "画像をアップロードできませんでした",
-        'file_type_Fraud' => "ファイル形式が不正です。"
+        'file_type_Fraud' => "ファイル形式が不正です。",
+        'not_found_hash_tag' => "該当するハッシュタグがありません"
     );
     function pageTitle($key)
     {

@@ -45,18 +45,11 @@ $app->get('/', function () use ($app) {
     if ((new \Twitter\User)->isLoginEnabled()) {
         $app->redirect('/login');
     }
-    if (isset($_GET['display_number']) && isset($_GET['display_limit'])) {
-        $display_number = $_GET['display_number'];
-        $display_limit = $_GET['display_limit'];
-    } else {
-        $display_number = 0;
-        $display_limit = 10;
-    }
     $tweet_display = new \Twitter\Tweet();
     $tweet_rows = $tweet_display
                     ->setUserId($_SESSION['user_id'])
-                    ->setDisplayNumber($display_number)
-                    ->setDisplayLimit($display_limit)
+                    ->setDisplayNumber(0)
+                    ->setDisplayLimit(10)
                     ->tweetDisplay();
     if ($tweet_rows == "not_found" ) {
         $app->render(
@@ -65,17 +58,21 @@ $app->get('/', function () use ($app) {
         );
     } else {
         $tweet_time_diff = new \Twitter\TweetTimeDiff();
-        $match = new \Twitter\HashTag();
         $tweet_rows = $tweet_time_diff -> tweetTimeChenge($tweet_rows);
         $tweet_rows = $tweet_time_diff -> tweetImage($tweet_rows);
-        $match -> matchHashTag($tweet_rows);
+
+        $match = new \Twitter\HashTag();
+        $tweet_hash_rows = $match->displayHashTag($tweet_rows);
         $app->render(
             'header.php',
             ['title' => \Twitter\Info::PAGETITLE['top_page']]
         );
         $app->render(
+            'tweet.php'
+        );
+        $app->render(
             'tweet_display.php',
-            ['rows' => $tweet_rows]
+            ['rows' => $tweet_hash_rows]
         );
     }
 });
@@ -111,19 +108,21 @@ $app->post('/tweet/submit', function () use ($app){
     $tweet_submit = new \Twitter\Images();
     $tweet_content = $tweet_submit
         ->htmlEscape($app->request->post('tweet_content'));
-    $tweet_insert = $tweet_submit
+
+    $tweet_submit
             ->setUserId($_SESSION['user_id'])
             ->setContent($tweet_content);
-    $tweet_insert = $tweet_submit->tweetInsert();
+
+    $tweet_submit->tweetInsert();
     $image = $app->request->post('images');
     $images_array = $app->request->post('images_array');
+
     $count_flag = 0;
     $images_array=explode(',',$images_array);
-    //print_r($images_array);
+
     if (!empty($images_array)) {
         foreach ($images_array as $image) {
             if ($count_flag % 2 !== 0) {
-                echo $image;
                 $file_name
                     = $tweet_submit->imageDecode($image);
                 $tweet_submit->imageInsert($file_name);
@@ -132,37 +131,28 @@ $app->post('/tweet/submit', function () use ($app){
         }
     }
 
-    /*
-    switch ($image_uplode_message) {
-        case true OR false:
-            $app->redirect('/');
-            break;
-        case 'can_not_upload':
-            $app->render(
-               'error.php',
-                ['error_info' => $error_info['can_not_uplode']]
-            );
-            break;
-        case 'file_type_Fraud':
-            $app->render(
-               'error.php',
-                ['error_info' => $error_info['file_type_Fraud']]
-            );
-            break;
-        default:
-            break;
+    $match = new \Twitter\HashTag();
+    $tweet_id = $tweet_submit->getTweetId();
+    $match->setTweetId($tweet_id);
+    $tweet_hash_rows = $match->matchHashTag($tweet_content);
+
+    if ($tweet_hash_rows != false) {
+        $match->hashTagInsert($tweet_hash_rows);
     }
-    */
+
 });
 
 $app->post('/tweet/submit/after', function () use ($app) {
     $tweet = new \Twitter\Tweet();
+
     $tweet
         ->setUserId($_SESSION['user_id'])
         ->setTweetId($app->request->post('tweet_id'));
+
     $tweet_rows = $tweet->newTweetDisplay();
     $tweet_time_diff = new \Twitter\TweetTimeDiff();
     $tweet_rows = $tweet_time_diff -> tweetTimeChenge($tweet_rows);
+
     $app->render(
            'new_tweet.php',
             ['rows' => $tweet_rows]
@@ -178,11 +168,13 @@ $app->get('/tweet/edit/:number', function ($number) use ($app) {
         ->setUserId($_SESSION['user_id'])
         ->setTweetId($number)
         ->tweetEditSelect($number,$_SESSION['user_id']);
+
     if ($select_tweet !== false ) {
         $app->render(
             'header.php',
             ['title' => \Twitter\Info::PAGETITLE['tweet_edit']]
         );
+
         $app->render(
             'tweet_edit.php',
             ['rows' => $select_tweet]
@@ -199,16 +191,22 @@ $app->post('/tweet/edit', function () use ($app){
     $edit_submit = new \Twitter\Tweet();
     $tweet_content = $edit_submit
         ->htmlEscape($app->request->post('tweet_content'));
+
     $edit_submit
         ->setUserId($_SESSION['user_id'])
         ->setTweetId($app->request->post('tweet_id'))
         ->setContent($tweet_content);
+
     $edit_submit
         ->tweetEditSubmit();
+
     if ($edit_submit == true) {
         $app->redirect('/');
     }else{
-
+        $app->render(
+           'error.php',
+            ['error_info' => \Twitter\Info::ERRORINFO['not_fount_tweet']]
+        );
     }
 });
 
@@ -542,6 +540,30 @@ $app->get('/tweet/select/:number' , function ($number) use ($app) {
                 ['error_info' => \Twitter\Info::ERRORINFO['not_fount_tweet']]
             );
         }
+});
+
+$app->get('/hashtag/:word' , function ($word) use ($app) {
+    if ((new \Twitter\User)->isLoginEnabled()) {
+            $app->redirect('/login');
+        }
+    $select_hash_tag = new \Twitter\HashTag();
+    $tweet_rows = $select_hash_tag->selectHashTag($word);
+    if ($tweet_rows) {
+        $tweet_hash_rows = $select_hash_tag->displayHashTag($tweet_rows);
+        $app->render(
+            'header.php',
+            ['title' => \Twitter\Info::PAGETITLE['tweet_select']]
+        );
+        $app->render(
+            'search_hashtag.php',
+            ['rows' => $tweet_hash_rows, 'word' => $word]
+        );
+    } else {
+        $app->render(
+           'error.php',
+            ['error_info' => \Twitter\Info::ERRORINFO['not_found_hash_tag']]
+        );
+    }
 });
 
 $app->post('/upload', function () use ($app) {

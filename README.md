@@ -102,16 +102,6 @@ CREATE TABLE `images` (
 ) ENGINE=InnoDB;
 
 
-CREATE TABLE `images_binary` (
-  `tweet_id` INT NOT NULL,
-  `image_blob` blob NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`tweet_id`),
-  KEY `tweet_id_idx` (`tweet_id`),
-  CONSTRAINT `images_binary_ibfk_1` FOREIGN KEY (`tweet_id`) REFERENCES `tweets` (`tweet_id`)
-) ENGINE=InnoDB;
-
 インサート文tweets
 insert into tweets (tweet_id,user_id,user_name,content) values(null,1,'user_name','test');
 
