@@ -1,7 +1,7 @@
   <div class='username_div'>ユーザ名<?= $_SESSION['user_name'] ?></div>
   <a href="/tweet">つぶやく</a>
   <a href="/tweet/favorites">お気に入り履歴</a>
-  <form action="user/logout" method="POST">
+  <form action="/user/logout" method="POST">
     <input type="submit" value="ログアウト">
   </form>
 

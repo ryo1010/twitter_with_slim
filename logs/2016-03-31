@@ -857,3 +857,54 @@ Stack trace:
 #7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
 #8 /mnt/akahira/twitter_with_slim/index.php(599): Slim\Slim->run()
 #9 {main}
+exception 'ErrorException' with message 'Undefined variable: tag_array' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:95
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(95): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 95, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(140): Twitter\HashTag->hashTagInsert(Array)
+#2 [internal function]: {closure}()
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(604): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: replace_content' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:58
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(58): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 58, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(559): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}('\xE5\xB1\xB1\xE5\xB2\xA1\xE5\xAE\xB6')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(611): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: replace_content' in /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php:59
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/src/Twitter/HashTag.php(59): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 59, Array)
+#1 /mnt/akahira/twitter_with_slim/index.php(559): Twitter\HashTag->displayHashTag(Array)
+#2 [internal function]: {closure}('\xE5\xB1\xB1\xE5\xB2\xA1\xE5\xAE\xB6')
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#9 /mnt/akahira/twitter_with_slim/index.php(611): Slim\Slim->run()
+#10 {main}
+exception 'ErrorException' with message 'Undefined variable: image' in /mnt/akahira/twitter_with_slim/index.php:97
+Stack trace:
+#0 /mnt/akahira/twitter_with_slim/index.php(97): Slim\Slim::handleErrors(8, 'Undefined varia...', '/mnt/akahira/tw...', 97, Array)
+#1 [internal function]: {closure}()
+#2 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Route.php(468): call_user_func_array(Object(Closure), Array)
+#3 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1357): Slim\Route->dispatch()
+#4 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/Flash.php(85): Slim\Slim->call()
+#5 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/MethodOverride.php(92): Slim\Middleware\Flash->call()
+#6 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Middleware/PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#7 /mnt/akahira/twitter_with_slim/vendor/slim/slim/Slim/Slim.php(1302): Slim\Middleware\PrettyExceptions->call()
+#8 /mnt/akahira/twitter_with_slim/index.php(620): Slim\Slim->run()
+#9 {main}

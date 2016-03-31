@@ -6,7 +6,7 @@
   <script src="/js/jquery-2.2.2.min.js"></script>
   <script src="/js/tweet_load_top_page.js"></script>
   <script src="/js/tweet_submit.js"></script>
-  <script src="/js/image_upload.js"></script>
+  <script src="/js/image_display.js"></script>
 </head>
 <body>
 <form action="/tweet/search" method="GET">

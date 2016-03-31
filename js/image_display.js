@@ -13,6 +13,7 @@ $(function() {
         imagesDisplay(files[i]);
       } else {
         alert("画像は4つまで選択可能です。");
+        break;
       }
     }
   });

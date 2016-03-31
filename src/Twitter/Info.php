@@ -37,11 +37,4 @@ class Info
         'file_type_Fraud' => "ファイル形式が不正です。",
         'not_found_hash_tag' => "該当するハッシュタグがありません"
     );
-    function pageTitle($key)
-    {
-        if (isset($this->PAGETITLE[$key])) {
-            return self::PAGETITLE[$key];
-        }
-    }
-
 }

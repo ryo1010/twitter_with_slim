@@ -51,25 +51,30 @@ class HashTag extends Tweet
             $pattern = "/[#＃][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-んァ-ヶｦ-ﾟー!-:-@≠\[-{-~]+/u";
             $pattern1 = '/[#＃]/u';
             if (preg_match_all($pattern, $row['content'], $hash_tags)) {
-               foreach ($hash_tags as $hash_tag) {
-                    foreach ($hash_tag as $tag) {
 
+               foreach ($hash_tags as $hash_tag) {
+                $first_array = reset($hash_tag);
+
+                    foreach ($hash_tag as $tag) {
                         $tag_link = preg_replace('/[#＃]/u',"",$tag);
+                        $replace_content = "<a href=/hashtag/$tag_link>".$tag."</a>";
+
                         $text = str_replace(
                             $tag,
-                            "<a href=/hashtag/$tag_link>".$tag."</a>",
+                            $replace_content,
                             $row['content']
                         );
+
                         $row['content'] = $text;
                     }
                }
             }
+
             $rows[$rows_count]['content'] = $row['content'];
             $rows_count++;
         }
         return $rows;
     }
-
 
     public function matchHashTag($content)
     {
@@ -85,9 +90,11 @@ class HashTag extends Tweet
     {
         $sql = "";
         $comma_flag = 1;
+
         foreach ($hash_tag_rows as $rows) {
             $hash_tags = $this->tweetHashTag($rows);
             $tag_count = count($rows);
+
             foreach ($hash_tags as $tag) {
                 $tag_array[] = $tag;
                 $sql .= "(?, ?, now())";
@@ -105,6 +112,7 @@ class HashTag extends Tweet
             );
 
             $sql_count = 1;
+
             foreach ($tag_array as $tag) {
                 $stmt->bindValue($sql_count,$tag,\PDO::PARAM_STR);
                 $stmt->bindValue($sql_count+1,$this->tweet_id,\PDO::PARAM_STR);

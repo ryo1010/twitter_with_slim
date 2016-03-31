@@ -89,12 +89,20 @@ $app->post('/', function () use ($app) {
                     ->setDisplayNumber($display_number)
                     ->setDisplayLimit($display_limit)
                     ->tweetDisplay();
+
     if ($tweet_rows !== "not_found" ) {
+
         $tweet_time_diff = new \Twitter\TweetTimeDiff();
-        $tweet_rows = $tweet_time_diff -> tweetTimeChenge($tweet_rows);
+        $tweet_rows = $tweet_time_diff->tweetTimeChenge($tweet_rows);
+        $tweet_rows = $tweet_time_diff->tweetImage($tweet_rows);
+        $tweet_rows = $tweet_time_diff->tweetImage($tweet_rows);
+
+        $match = new \Twitter\HashTag();
+        $tweet_hash_rows = $match->displayHashTag($tweet_rows);
+
         $app->render(
             'new_tweet.php',
-            ['rows' => $tweet_rows]
+            ['rows' => $tweet_hash_rows]
         );
     }
 });
@@ -433,7 +441,11 @@ $app->get('/user/:user_id', function ($user_id) use ($app) {
         $image = new \Twitter\TweetTimeDiff();
         $tweet_rows = $image->tweetImage($tweet_rows);
 
+        $match = new \Twitter\HashTag();
+        $tweet_rows = $match->displayHashTag($tweet_rows);
+
         if ( $tweet_rows !== false ) {
+
              $app->render(
                 'header.php',
                 ['title' => $user_name.\Twitter\Info::PAGETITLE['user_detail_page']]
@@ -443,7 +455,9 @@ $app->get('/user/:user_id', function ($user_id) use ($app) {
                 ['tweet_rows'=> $tweet_rows,
                 'follow_status' => $follow_status]
             );
+
         } else {
+
             $app->render(
                 'header.php',
                 ['title' => $user_name.\Twitter\Info::PAGETITLE['user_detail_page']]
@@ -453,7 +467,9 @@ $app->get('/user/:user_id', function ($user_id) use ($app) {
                 ['user_name'=>$user_name]
             );
         }
+
     } else {
+
         $app->render(
             'error.php',
             ['error_info' => \Twitter\Info::ERRORINFO['not_found_user']]

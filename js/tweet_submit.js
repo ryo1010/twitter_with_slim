@@ -18,7 +18,6 @@ $(function() {
   $('#tweet_submit').click(function() {
     try {
       var fd = new FormData();
-      //バイナリデータ取得
       var images = new Array();
       $("[id=images]").each(function() {
         images.push($(this).attr("src"));
@@ -37,7 +36,6 @@ $(function() {
         $.ajax(
           "/tweet/submit", postData
         ).done(function( text ){
-          console.log(text);
           $("new_tweet").append(text);
           $('text.tweet_content').val("");
           tweetid = new FormData();
